@@ -1,0 +1,2901 @@
+
+IC.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000e2c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000012e  00800060  00000e2c  00000ea0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000fce  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001000  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000128  00000000  00000000  0000103c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000204a  00000000  00000000  00001164  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000002b7  00000000  00000000  000031ae  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000006df  00000000  00000000  00003465  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000003d4  00000000  00000000  00003b44  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000036f  00000000  00000000  00003f18  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00001c8a  00000000  00000000  00004287  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000118  00000000  00000000  00005f11  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	20 c0       	rjmp	.+64     	; 0x42 <__ctors_end>
+   2:	5d c1       	rjmp	.+698    	; 0x2be <__vector_1>
+   4:	af c6       	rjmp	.+3422   	; 0xd64 <__vector_2>
+   6:	38 c0       	rjmp	.+112    	; 0x78 <__bad_interrupt>
+   8:	37 c0       	rjmp	.+110    	; 0x78 <__bad_interrupt>
+   a:	36 c0       	rjmp	.+108    	; 0x78 <__bad_interrupt>
+   c:	35 c0       	rjmp	.+106    	; 0x78 <__bad_interrupt>
+   e:	34 c0       	rjmp	.+104    	; 0x78 <__bad_interrupt>
+  10:	33 c0       	rjmp	.+102    	; 0x78 <__bad_interrupt>
+  12:	32 c0       	rjmp	.+100    	; 0x78 <__bad_interrupt>
+  14:	31 c0       	rjmp	.+98     	; 0x78 <__bad_interrupt>
+  16:	30 c0       	rjmp	.+96     	; 0x78 <__bad_interrupt>
+  18:	2f c0       	rjmp	.+94     	; 0x78 <__bad_interrupt>
+  1a:	2e c0       	rjmp	.+92     	; 0x78 <__bad_interrupt>
+  1c:	2d c0       	rjmp	.+90     	; 0x78 <__bad_interrupt>
+  1e:	2c c0       	rjmp	.+88     	; 0x78 <__bad_interrupt>
+  20:	2b c0       	rjmp	.+86     	; 0x78 <__bad_interrupt>
+  22:	2a c0       	rjmp	.+84     	; 0x78 <__bad_interrupt>
+  24:	29 c0       	rjmp	.+82     	; 0x78 <__bad_interrupt>
+  26:	81 c1       	rjmp	.+770    	; 0x32a <__vector_1+0x6c>
+  28:	84 c1       	rjmp	.+776    	; 0x332 <__vector_1+0x74>
+  2a:	87 c1       	rjmp	.+782    	; 0x33a <__vector_1+0x7c>
+  2c:	8a c1       	rjmp	.+788    	; 0x342 <__vector_1+0x84>
+  2e:	8d c1       	rjmp	.+794    	; 0x34a <__vector_1+0x8c>
+  30:	90 c1       	rjmp	.+800    	; 0x352 <__vector_1+0x94>
+  32:	93 c1       	rjmp	.+806    	; 0x35a <__vector_1+0x9c>
+  34:	c8 c6       	rjmp	.+3472   	; 0xdc6 <__vector_2+0x62>
+  36:	c9 c6       	rjmp	.+3474   	; 0xdca <__vector_2+0x66>
+  38:	ca c6       	rjmp	.+3476   	; 0xdce <__vector_2+0x6a>
+  3a:	cb c6       	rjmp	.+3478   	; 0xdd2 <__vector_2+0x6e>
+  3c:	cc c6       	rjmp	.+3480   	; 0xdd6 <__vector_2+0x72>
+  3e:	cd c6       	rjmp	.+3482   	; 0xdda <__vector_2+0x76>
+  40:	ce c6       	rjmp	.+3484   	; 0xdde <__vector_2+0x7a>
+
+00000042 <__ctors_end>:
+  42:	11 24       	eor	r1, r1
+  44:	1f be       	out	0x3f, r1	; 63
+  46:	cf e5       	ldi	r28, 0x5F	; 95
+  48:	d4 e0       	ldi	r29, 0x04	; 4
+  4a:	de bf       	out	0x3e, r29	; 62
+  4c:	cd bf       	out	0x3d, r28	; 61
+
+0000004e <__do_copy_data>:
+  4e:	11 e0       	ldi	r17, 0x01	; 1
+  50:	a0 e6       	ldi	r26, 0x60	; 96
+  52:	b0 e0       	ldi	r27, 0x00	; 0
+  54:	ec e2       	ldi	r30, 0x2C	; 44
+  56:	fe e0       	ldi	r31, 0x0E	; 14
+  58:	02 c0       	rjmp	.+4      	; 0x5e <__do_copy_data+0x10>
+  5a:	05 90       	lpm	r0, Z+
+  5c:	0d 92       	st	X+, r0
+  5e:	ae 38       	cpi	r26, 0x8E	; 142
+  60:	b1 07       	cpc	r27, r17
+  62:	d9 f7       	brne	.-10     	; 0x5a <__do_copy_data+0xc>
+
+00000064 <__do_clear_bss>:
+  64:	21 e0       	ldi	r18, 0x01	; 1
+  66:	ae e8       	ldi	r26, 0x8E	; 142
+  68:	b1 e0       	ldi	r27, 0x01	; 1
+  6a:	01 c0       	rjmp	.+2      	; 0x6e <.do_clear_bss_start>
+
+0000006c <.do_clear_bss_loop>:
+  6c:	1d 92       	st	X+, r1
+
+0000006e <.do_clear_bss_start>:
+  6e:	ae 38       	cpi	r26, 0x8E	; 142
+  70:	b2 07       	cpc	r27, r18
+  72:	e1 f7       	brne	.-8      	; 0x6c <.do_clear_bss_loop>
+  74:	c6 d6       	rcall	.+3468   	; 0xe02 <main>
+  76:	d8 c6       	rjmp	.+3504   	; 0xe28 <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	c3 cf       	rjmp	.-122    	; 0x0 <__vectors>
+
+0000007a <lcd_port_config>:
+		lcd_wr_char(million);
+		flag=1;
+	}
+	if(digits==4 || flag==1)
+	{
+		temp = value/1000;
+  7a:	84 b3       	in	r24, 0x14	; 20
+  7c:	8f 67       	ori	r24, 0x7F	; 127
+  7e:	84 bb       	out	0x14, r24	; 20
+		thousand = temp%10 + 48;
+  80:	85 b3       	in	r24, 0x15	; 21
+  82:	81 70       	andi	r24, 0x01	; 1
+  84:	85 bb       	out	0x15, r24	; 21
+  86:	08 95       	ret
+
+00000088 <lcd_set_4bit>:
+  88:	89 ef       	ldi	r24, 0xF9	; 249
+  8a:	90 e0       	ldi	r25, 0x00	; 0
+  8c:	01 97       	sbiw	r24, 0x01	; 1
+  8e:	f1 f7       	brne	.-4      	; 0x8c <lcd_set_4bit+0x4>
+  90:	00 c0       	rjmp	.+0      	; 0x92 <lcd_set_4bit+0xa>
+  92:	00 00       	nop
+  94:	ad 98       	cbi	0x15, 5	; 21
+  96:	ae 98       	cbi	0x15, 6	; 21
+  98:	8c e0       	ldi	r24, 0x0C	; 12
+  9a:	85 bb       	out	0x15, r24	; 21
+  9c:	ac 9a       	sbi	0x15, 4	; 21
+  9e:	e1 ee       	ldi	r30, 0xE1	; 225
+  a0:	f4 e0       	ldi	r31, 0x04	; 4
+  a2:	31 97       	sbiw	r30, 0x01	; 1
+  a4:	f1 f7       	brne	.-4      	; 0xa2 <lcd_set_4bit+0x1a>
+  a6:	00 c0       	rjmp	.+0      	; 0xa8 <lcd_set_4bit+0x20>
+  a8:	00 00       	nop
+  aa:	ac 98       	cbi	0x15, 4	; 21
+  ac:	e9 ef       	ldi	r30, 0xF9	; 249
+  ae:	f0 e0       	ldi	r31, 0x00	; 0
+  b0:	31 97       	sbiw	r30, 0x01	; 1
+  b2:	f1 f7       	brne	.-4      	; 0xb0 <lcd_set_4bit+0x28>
+  b4:	00 c0       	rjmp	.+0      	; 0xb6 <lcd_set_4bit+0x2e>
+  b6:	00 00       	nop
+  b8:	ad 98       	cbi	0x15, 5	; 21
+  ba:	ae 98       	cbi	0x15, 6	; 21
+		lcd_wr_char(thousand);
+  bc:	85 bb       	out	0x15, r24	; 21
+		flag=1;
+	}
+	if(digits==3 || flag==1)
+	{
+		temp = value/100;
+  be:	ac 9a       	sbi	0x15, 4	; 21
+  c0:	e1 ee       	ldi	r30, 0xE1	; 225
+  c2:	f4 e0       	ldi	r31, 0x04	; 4
+  c4:	31 97       	sbiw	r30, 0x01	; 1
+  c6:	f1 f7       	brne	.-4      	; 0xc4 <lcd_set_4bit+0x3c>
+  c8:	00 c0       	rjmp	.+0      	; 0xca <lcd_set_4bit+0x42>
+  ca:	00 00       	nop
+  cc:	ac 98       	cbi	0x15, 4	; 21
+  ce:	e9 ef       	ldi	r30, 0xF9	; 249
+  d0:	f0 e0       	ldi	r31, 0x00	; 0
+  d2:	31 97       	sbiw	r30, 0x01	; 1
+  d4:	f1 f7       	brne	.-4      	; 0xd2 <lcd_set_4bit+0x4a>
+  d6:	00 c0       	rjmp	.+0      	; 0xd8 <lcd_set_4bit+0x50>
+  d8:	00 00       	nop
+  da:	ad 98       	cbi	0x15, 5	; 21
+		hundred = temp%10 + 48;
+  dc:	ae 98       	cbi	0x15, 6	; 21
+  de:	85 bb       	out	0x15, r24	; 21
+  e0:	ac 9a       	sbi	0x15, 4	; 21
+  e2:	81 ee       	ldi	r24, 0xE1	; 225
+  e4:	94 e0       	ldi	r25, 0x04	; 4
+  e6:	01 97       	sbiw	r24, 0x01	; 1
+  e8:	f1 f7       	brne	.-4      	; 0xe6 <lcd_set_4bit+0x5e>
+  ea:	00 c0       	rjmp	.+0      	; 0xec <lcd_set_4bit+0x64>
+  ec:	00 00       	nop
+  ee:	ac 98       	cbi	0x15, 4	; 21
+  f0:	e9 ef       	ldi	r30, 0xF9	; 249
+  f2:	f0 e0       	ldi	r31, 0x00	; 0
+  f4:	31 97       	sbiw	r30, 0x01	; 1
+  f6:	f1 f7       	brne	.-4      	; 0xf4 <lcd_set_4bit+0x6c>
+  f8:	00 c0       	rjmp	.+0      	; 0xfa <lcd_set_4bit+0x72>
+  fa:	00 00       	nop
+  fc:	ad 98       	cbi	0x15, 5	; 21
+  fe:	ae 98       	cbi	0x15, 6	; 21
+ 100:	84 e0       	ldi	r24, 0x04	; 4
+ 102:	85 bb       	out	0x15, r24	; 21
+ 104:	ac 9a       	sbi	0x15, 4	; 21
+ 106:	81 ee       	ldi	r24, 0xE1	; 225
+ 108:	94 e0       	ldi	r25, 0x04	; 4
+ 10a:	01 97       	sbiw	r24, 0x01	; 1
+ 10c:	f1 f7       	brne	.-4      	; 0x10a <lcd_set_4bit+0x82>
+ 10e:	00 c0       	rjmp	.+0      	; 0x110 <lcd_set_4bit+0x88>
+ 110:	00 00       	nop
+ 112:	ac 98       	cbi	0x15, 4	; 21
+ 114:	08 95       	ret
+
+00000116 <lcd_wr_command>:
+ 116:	95 b3       	in	r25, 0x15	; 21
+		lcd_wr_char(hundred);
+ 118:	90 7f       	andi	r25, 0xF0	; 240
+ 11a:	95 bb       	out	0x15, r25	; 21
+		flag=1;
+	}
+	if(digits==2 || flag==1)
+ 11c:	98 2f       	mov	r25, r24
+ 11e:	92 95       	swap	r25
+ 120:	9f 70       	andi	r25, 0x0F	; 15
+ 122:	49 2f       	mov	r20, r25
+	{
+		temp = value/10;
+ 124:	44 70       	andi	r20, 0x04	; 4
+ 126:	39 2f       	mov	r19, r25
+ 128:	32 70       	andi	r19, 0x02	; 2
+ 12a:	29 2f       	mov	r18, r25
+ 12c:	21 70       	andi	r18, 0x01	; 1
+ 12e:	55 b3       	in	r21, 0x15	; 21
+ 130:	96 95       	lsr	r25
+ 132:	96 95       	lsr	r25
+ 134:	96 95       	lsr	r25
+ 136:	46 95       	lsr	r20
+ 138:	94 2b       	or	r25, r20
+ 13a:	95 2b       	or	r25, r21
+ 13c:	33 0f       	add	r19, r19
+ 13e:	93 2b       	or	r25, r19
+ 140:	22 0f       	add	r18, r18
+		tens = temp%10 + 48;
+ 142:	22 0f       	add	r18, r18
+ 144:	22 0f       	add	r18, r18
+ 146:	92 2b       	or	r25, r18
+ 148:	95 bb       	out	0x15, r25	; 21
+ 14a:	ad 98       	cbi	0x15, 5	; 21
+ 14c:	ae 98       	cbi	0x15, 6	; 21
+ 14e:	ac 9a       	sbi	0x15, 4	; 21
+ 150:	e1 ee       	ldi	r30, 0xE1	; 225
+ 152:	f4 e0       	ldi	r31, 0x04	; 4
+ 154:	31 97       	sbiw	r30, 0x01	; 1
+ 156:	f1 f7       	brne	.-4      	; 0x154 <lcd_wr_command+0x3e>
+ 158:	00 c0       	rjmp	.+0      	; 0x15a <lcd_wr_command+0x44>
+ 15a:	00 00       	nop
+ 15c:	ac 98       	cbi	0x15, 4	; 21
+ 15e:	95 b3       	in	r25, 0x15	; 21
+ 160:	90 7f       	andi	r25, 0xF0	; 240
+ 162:	95 bb       	out	0x15, r25	; 21
+ 164:	38 2f       	mov	r19, r24
+ 166:	34 70       	andi	r19, 0x04	; 4
+ 168:	28 2f       	mov	r18, r24
+ 16a:	22 70       	andi	r18, 0x02	; 2
+ 16c:	98 2f       	mov	r25, r24
+ 16e:	91 70       	andi	r25, 0x01	; 1
+ 170:	45 b3       	in	r20, 0x15	; 21
+ 172:	83 fb       	bst	r24, 3
+ 174:	88 27       	eor	r24, r24
+ 176:	80 f9       	bld	r24, 0
+ 178:	36 95       	lsr	r19
+		lcd_wr_char(tens);
+ 17a:	83 2b       	or	r24, r19
+		flag=1;
+	}
+	if(digits==1 || flag==1)
+	{
+		unit = value%10 + 48;
+ 17c:	84 2b       	or	r24, r20
+ 17e:	22 0f       	add	r18, r18
+ 180:	82 2b       	or	r24, r18
+ 182:	99 0f       	add	r25, r25
+ 184:	99 0f       	add	r25, r25
+ 186:	99 0f       	add	r25, r25
+ 188:	89 2b       	or	r24, r25
+ 18a:	85 bb       	out	0x15, r24	; 21
+ 18c:	ad 98       	cbi	0x15, 5	; 21
+ 18e:	ae 98       	cbi	0x15, 6	; 21
+ 190:	ac 9a       	sbi	0x15, 4	; 21
+ 192:	81 ee       	ldi	r24, 0xE1	; 225
+ 194:	94 e0       	ldi	r25, 0x04	; 4
+ 196:	01 97       	sbiw	r24, 0x01	; 1
+ 198:	f1 f7       	brne	.-4      	; 0x196 <lcd_wr_command+0x80>
+ 19a:	00 c0       	rjmp	.+0      	; 0x19c <lcd_wr_command+0x86>
+ 19c:	00 00       	nop
+ 19e:	ac 98       	cbi	0x15, 4	; 21
+ 1a0:	08 95       	ret
+
+000001a2 <lcd_init>:
+ 1a2:	6b df       	rcall	.-298    	; 0x7a <lcd_port_config>
+ 1a4:	8b e4       	ldi	r24, 0x4B	; 75
+ 1a6:	9d e1       	ldi	r25, 0x1D	; 29
+ 1a8:	01 97       	sbiw	r24, 0x01	; 1
+ 1aa:	f1 f7       	brne	.-4      	; 0x1a8 <lcd_init+0x6>
+ 1ac:	00 c0       	rjmp	.+0      	; 0x1ae <lcd_init+0xc>
+ 1ae:	00 00       	nop
+ 1b0:	6b df       	rcall	.-298    	; 0x88 <lcd_set_4bit>
+ 1b2:	89 ef       	ldi	r24, 0xF9	; 249
+ 1b4:	90 e0       	ldi	r25, 0x00	; 0
+ 1b6:	01 97       	sbiw	r24, 0x01	; 1
+		lcd_wr_char(unit);
+ 1b8:	f1 f7       	brne	.-4      	; 0x1b6 <lcd_init+0x14>
+	}
+	if(digits>5)
+ 1ba:	00 c0       	rjmp	.+0      	; 0x1bc <lcd_init+0x1a>
+ 1bc:	00 00       	nop
+	{
+		lcd_wr_char('E');
+ 1be:	88 e2       	ldi	r24, 0x28	; 40
+ 1c0:	aa df       	rcall	.-172    	; 0x116 <lcd_wr_command>
+ 1c2:	81 e0       	ldi	r24, 0x01	; 1
+		temp = value/1000;
+		thousand = temp%10 + 48;
+		lcd_wr_char(thousand);
+		flag=1;
+	}
+	if(digits==3 || flag==1)
+ 1c4:	a8 df       	rcall	.-176    	; 0x116 <lcd_wr_command>
+ 1c6:	86 e0       	ldi	r24, 0x06	; 6
+ 1c8:	a6 df       	rcall	.-180    	; 0x116 <lcd_wr_command>
+ 1ca:	8e e0       	ldi	r24, 0x0E	; 14
+ 1cc:	a4 df       	rcall	.-184    	; 0x116 <lcd_wr_command>
+		temp = value/10;
+		tens = temp%10 + 48;
+		lcd_wr_char(tens);
+		flag=1;
+	}
+	if(digits==1 || flag==1)
+ 1ce:	80 e8       	ldi	r24, 0x80	; 128
+ 1d0:	a2 df       	rcall	.-188    	; 0x116 <lcd_wr_command>
+ 1d2:	08 95       	ret
+
+000001d4 <lcd_wr_char>:
+ 1d4:	98 2f       	mov	r25, r24
+	if(digits>5)
+	{
+		lcd_wr_char('E');
+	}
+	
+}
+ 1d6:	92 95       	swap	r25
+ 1d8:	9f 70       	andi	r25, 0x0F	; 15
+ 1da:	25 b3       	in	r18, 0x15	; 21
+ 1dc:	20 7f       	andi	r18, 0xF0	; 240
+ 1de:	25 bb       	out	0x15, r18	; 21
+	temp = temp >> 4;
+	
+	lcd_port &= 0xF0;
+	
+	var3 = temp & 0b00001000;
+	var2 = temp & 0b00000100;
+ 1e0:	49 2f       	mov	r20, r25
+ 1e2:	44 70       	andi	r20, 0x04	; 4
+	var1 = temp & 0b00000010;
+ 1e4:	39 2f       	mov	r19, r25
+ 1e6:	32 70       	andi	r19, 0x02	; 2
+	var0 = temp & 0b00000001;
+ 1e8:	29 2f       	mov	r18, r25
+ 1ea:	21 70       	andi	r18, 0x01	; 1
+	var0 = var0 << 3;
+	
+	temp = 0x00;
+	temp |= var3 | var2 | var1 | var0;
+	
+	lcd_port |= temp;
+ 1ec:	55 b3       	in	r21, 0x15	; 21
+	var3 = temp & 0b00001000;
+	var2 = temp & 0b00000100;
+	var1 = temp & 0b00000010;
+	var0 = temp & 0b00000001;
+	
+	var3 = var3 >> 3;
+ 1ee:	96 95       	lsr	r25
+ 1f0:	96 95       	lsr	r25
+ 1f2:	96 95       	lsr	r25
+	var2 = var2 >> 1;
+ 1f4:	46 95       	lsr	r20
+	var1 = var1 << 1;
+	var0 = var0 << 3;
+	
+	temp = 0x00;
+	temp |= var3 | var2 | var1 | var0;
+ 1f6:	94 2b       	or	r25, r20
+ 1f8:	95 2b       	or	r25, r21
+	var1 = temp & 0b00000010;
+	var0 = temp & 0b00000001;
+	
+	var3 = var3 >> 3;
+	var2 = var2 >> 1;
+	var1 = var1 << 1;
+ 1fa:	33 0f       	add	r19, r19
+ 1fc:	93 2b       	or	r25, r19
+	var0 = var0 << 3;
+ 1fe:	22 0f       	add	r18, r18
+ 200:	22 0f       	add	r18, r18
+ 202:	22 0f       	add	r18, r18
+	
+	temp = 0x00;
+	temp |= var3 | var2 | var1 | var0;
+	
+	lcd_port |= temp;
+ 204:	92 2b       	or	r25, r18
+ 206:	95 bb       	out	0x15, r25	; 21
+	sbit(lcd_port,RS);
+ 208:	ad 9a       	sbi	0x15, 5	; 21
+	cbit(lcd_port,RW);
+ 20a:	ae 98       	cbi	0x15, 6	; 21
+	sbit(lcd_port,EN);
+ 20c:	ac 9a       	sbi	0x15, 4	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 20e:	e1 ee       	ldi	r30, 0xE1	; 225
+ 210:	f4 e0       	ldi	r31, 0x04	; 4
+ 212:	31 97       	sbiw	r30, 0x01	; 1
+ 214:	f1 f7       	brne	.-4      	; 0x212 <lcd_wr_char+0x3e>
+ 216:	00 c0       	rjmp	.+0      	; 0x218 <lcd_wr_char+0x44>
+ 218:	00 00       	nop
+	_delay_ms(5);
+	cbit(lcd_port,EN);
+ 21a:	ac 98       	cbi	0x15, 4	; 21
+
+	letter = letter & 0x0F;
+	//letter = letter<<4;
+	lcd_port &= 0xF0;
+ 21c:	95 b3       	in	r25, 0x15	; 21
+ 21e:	90 7f       	andi	r25, 0xF0	; 240
+ 220:	95 bb       	out	0x15, r25	; 21
+	
+	var3 = letter & 0b00001000;
+	var2 = letter & 0b00000100;
+ 222:	38 2f       	mov	r19, r24
+ 224:	34 70       	andi	r19, 0x04	; 4
+	var1 = letter & 0b00000010;
+ 226:	28 2f       	mov	r18, r24
+ 228:	22 70       	andi	r18, 0x02	; 2
+	var0 = letter & 0b00000001;
+ 22a:	98 2f       	mov	r25, r24
+ 22c:	91 70       	andi	r25, 0x01	; 1
+	var0 = var0 << 3;
+	
+	letter = 0x00;
+	letter |= var3 | var2 | var1 | var0;
+	
+	lcd_port |= letter;
+ 22e:	45 b3       	in	r20, 0x15	; 21
+	var3 = letter & 0b00001000;
+	var2 = letter & 0b00000100;
+	var1 = letter & 0b00000010;
+	var0 = letter & 0b00000001;
+	
+	var3 = var3 >> 3;
+ 230:	83 fb       	bst	r24, 3
+ 232:	88 27       	eor	r24, r24
+ 234:	80 f9       	bld	r24, 0
+	var2 = var2 >> 1;
+ 236:	36 95       	lsr	r19
+	var1 = var1 << 1;
+	var0 = var0 << 3;
+	
+	letter = 0x00;
+	letter |= var3 | var2 | var1 | var0;
+ 238:	83 2b       	or	r24, r19
+ 23a:	84 2b       	or	r24, r20
+	var1 = letter & 0b00000010;
+	var0 = letter & 0b00000001;
+	
+	var3 = var3 >> 3;
+	var2 = var2 >> 1;
+	var1 = var1 << 1;
+ 23c:	22 0f       	add	r18, r18
+ 23e:	82 2b       	or	r24, r18
+	var0 = var0 << 3;
+ 240:	99 0f       	add	r25, r25
+ 242:	99 0f       	add	r25, r25
+ 244:	99 0f       	add	r25, r25
+	
+	letter = 0x00;
+	letter |= var3 | var2 | var1 | var0;
+	
+	lcd_port |= letter;
+ 246:	89 2b       	or	r24, r25
+ 248:	85 bb       	out	0x15, r24	; 21
+	sbit(lcd_port,RS);
+ 24a:	ad 9a       	sbi	0x15, 5	; 21
+	cbit(lcd_port,RW);
+ 24c:	ae 98       	cbi	0x15, 6	; 21
+	sbit(lcd_port,EN);
+ 24e:	ac 9a       	sbi	0x15, 4	; 21
+ 250:	81 ee       	ldi	r24, 0xE1	; 225
+ 252:	94 e0       	ldi	r25, 0x04	; 4
+ 254:	01 97       	sbiw	r24, 0x01	; 1
+ 256:	f1 f7       	brne	.-4      	; 0x254 <lcd_wr_char+0x80>
+ 258:	00 c0       	rjmp	.+0      	; 0x25a <lcd_wr_char+0x86>
+ 25a:	00 00       	nop
+	_delay_ms(5);
+	cbit(lcd_port,EN);
+ 25c:	ac 98       	cbi	0x15, 4	; 21
+ 25e:	08 95       	ret
+
+00000260 <lcd_clear>:
+}
+
+void lcd_clear()
+{
+	lcd_wr_command(0x01);
+ 260:	81 e0       	ldi	r24, 0x01	; 1
+ 262:	59 df       	rcall	.-334    	; 0x116 <lcd_wr_command>
+ 264:	08 95       	ret
+
+00000266 <lcd_home>:
+	
+}
+//Function to bring cursor at home position
+void lcd_home()
+{
+	lcd_wr_command(0x80);
+ 266:	80 e8       	ldi	r24, 0x80	; 128
+ 268:	56 df       	rcall	.-340    	; 0x116 <lcd_wr_command>
+ 26a:	08 95       	ret
+
+0000026c <lcd_string>:
+}
+
+
+//Function to Print String on LCD
+void lcd_string(char *str)
+{
+ 26c:	cf 93       	push	r28
+ 26e:	df 93       	push	r29
+ 270:	ec 01       	movw	r28, r24
+	while(*str != '\0')
+ 272:	88 81       	ld	r24, Y
+ 274:	88 23       	and	r24, r24
+ 276:	29 f0       	breq	.+10     	; 0x282 <lcd_string+0x16>
+ 278:	21 96       	adiw	r28, 0x01	; 1
+	{
+		lcd_wr_char(*str);
+ 27a:	ac df       	rcall	.-168    	; 0x1d4 <lcd_wr_char>
+
+
+//Function to Print String on LCD
+void lcd_string(char *str)
+{
+	while(*str != '\0')
+ 27c:	89 91       	ld	r24, Y+
+ 27e:	81 11       	cpse	r24, r1
+ 280:	fc cf       	rjmp	.-8      	; 0x27a <lcd_string+0xe>
+	{
+		lcd_wr_char(*str);
+		str++;
+	}
+	
+}
+ 282:	df 91       	pop	r29
+ 284:	cf 91       	pop	r28
+ 286:	08 95       	ret
+
+00000288 <lcd_cursor>:
+
+//Position the LCD cursor at "row", "column".
+
+void lcd_cursor (char row, char column)
+{
+	switch (row) {
+ 288:	82 30       	cpi	r24, 0x02	; 2
+ 28a:	69 f0       	breq	.+26     	; 0x2a6 <lcd_cursor+0x1e>
+ 28c:	18 f4       	brcc	.+6      	; 0x294 <lcd_cursor+0xc>
+ 28e:	81 30       	cpi	r24, 0x01	; 1
+ 290:	31 f0       	breq	.+12     	; 0x29e <lcd_cursor+0x16>
+ 292:	08 95       	ret
+ 294:	83 30       	cpi	r24, 0x03	; 3
+ 296:	59 f0       	breq	.+22     	; 0x2ae <lcd_cursor+0x26>
+ 298:	84 30       	cpi	r24, 0x04	; 4
+ 29a:	69 f0       	breq	.+26     	; 0x2b6 <lcd_cursor+0x2e>
+ 29c:	08 95       	ret
+		case 1: lcd_wr_command (0x80 + column - 1); break;
+ 29e:	8f e7       	ldi	r24, 0x7F	; 127
+ 2a0:	86 0f       	add	r24, r22
+ 2a2:	39 df       	rcall	.-398    	; 0x116 <lcd_wr_command>
+ 2a4:	08 95       	ret
+		case 2: lcd_wr_command (0xc0 + column - 1); break;
+ 2a6:	8f eb       	ldi	r24, 0xBF	; 191
+ 2a8:	86 0f       	add	r24, r22
+ 2aa:	35 df       	rcall	.-406    	; 0x116 <lcd_wr_command>
+ 2ac:	08 95       	ret
+		case 3: lcd_wr_command (0x94 + column - 1); break;
+ 2ae:	83 e9       	ldi	r24, 0x93	; 147
+ 2b0:	86 0f       	add	r24, r22
+ 2b2:	31 df       	rcall	.-414    	; 0x116 <lcd_wr_command>
+ 2b4:	08 95       	ret
+		case 4: lcd_wr_command (0xd4 + column - 1); break;
+ 2b6:	83 ed       	ldi	r24, 0xD3	; 211
+ 2b8:	86 0f       	add	r24, r22
+ 2ba:	2d df       	rcall	.-422    	; 0x116 <lcd_wr_command>
+ 2bc:	08 95       	ret
+
+000002be <__vector_1>:
+void IC_7402();
+void IC_Result(uint8_t,uint8_t,uint8_t,uint8_t);
+void findIC();
+
+ISR(INT0_vect)
+{
+ 2be:	1f 92       	push	r1
+ 2c0:	0f 92       	push	r0
+ 2c2:	0f b6       	in	r0, 0x3f	; 63
+ 2c4:	0f 92       	push	r0
+ 2c6:	11 24       	eor	r1, r1
+ 2c8:	2f 93       	push	r18
+ 2ca:	3f 93       	push	r19
+ 2cc:	4f 93       	push	r20
+ 2ce:	5f 93       	push	r21
+ 2d0:	6f 93       	push	r22
+ 2d2:	7f 93       	push	r23
+ 2d4:	8f 93       	push	r24
+ 2d6:	9f 93       	push	r25
+ 2d8:	af 93       	push	r26
+ 2da:	bf 93       	push	r27
+ 2dc:	ef 93       	push	r30
+ 2de:	ff 93       	push	r31
+	mode++;
+ 2e0:	80 91 60 00 	lds	r24, 0x0060
+ 2e4:	8f 5f       	subi	r24, 0xFF	; 255
+ 2e6:	80 93 60 00 	sts	0x0060, r24
+	lcd_clear();
+ 2ea:	ba df       	rcall	.-140    	; 0x260 <lcd_clear>
+	lcd_cursor(1,2);
+ 2ec:	62 e0       	ldi	r22, 0x02	; 2
+ 2ee:	81 e0       	ldi	r24, 0x01	; 1
+ 2f0:	cb df       	rcall	.-106    	; 0x288 <lcd_cursor>
+	switch(mode%TOTAL_MODES)
+ 2f2:	80 91 60 00 	lds	r24, 0x0060
+ 2f6:	95 e2       	ldi	r25, 0x25	; 37
+ 2f8:	89 9f       	mul	r24, r25
+ 2fa:	21 2d       	mov	r18, r1
+ 2fc:	11 24       	eor	r1, r1
+ 2fe:	98 2f       	mov	r25, r24
+ 300:	92 1b       	sub	r25, r18
+ 302:	96 95       	lsr	r25
+ 304:	92 0f       	add	r25, r18
+ 306:	96 95       	lsr	r25
+ 308:	96 95       	lsr	r25
+ 30a:	29 2f       	mov	r18, r25
+ 30c:	22 0f       	add	r18, r18
+ 30e:	22 0f       	add	r18, r18
+ 310:	22 0f       	add	r18, r18
+ 312:	29 1b       	sub	r18, r25
+ 314:	e8 2f       	mov	r30, r24
+ 316:	e2 1b       	sub	r30, r18
+ 318:	8e 2f       	mov	r24, r30
+ 31a:	90 e0       	ldi	r25, 0x00	; 0
+ 31c:	87 30       	cpi	r24, 0x07	; 7
+ 31e:	91 05       	cpc	r25, r1
+ 320:	f8 f4       	brcc	.+62     	; 0x360 <__vector_1+0xa2>
+ 322:	fc 01       	movw	r30, r24
+ 324:	ed 5e       	subi	r30, 0xED	; 237
+ 326:	ff 4f       	sbci	r31, 0xFF	; 255
+ 328:	09 94       	ijmp
+	{
+		case 0:lcd_string("7400 NAND IC");break;
+ 32a:	81 e6       	ldi	r24, 0x61	; 97
+ 32c:	90 e0       	ldi	r25, 0x00	; 0
+ 32e:	9e df       	rcall	.-196    	; 0x26c <lcd_string>
+ 330:	17 c0       	rjmp	.+46     	; 0x360 <__vector_1+0xa2>
+		case 1:lcd_string("7402 NOR IC");break;
+ 332:	8e e6       	ldi	r24, 0x6E	; 110
+ 334:	90 e0       	ldi	r25, 0x00	; 0
+ 336:	9a df       	rcall	.-204    	; 0x26c <lcd_string>
+ 338:	13 c0       	rjmp	.+38     	; 0x360 <__vector_1+0xa2>
+		case 2:lcd_string("7404 NOT IC");break;
+ 33a:	8a e7       	ldi	r24, 0x7A	; 122
+ 33c:	90 e0       	ldi	r25, 0x00	; 0
+ 33e:	96 df       	rcall	.-212    	; 0x26c <lcd_string>
+ 340:	0f c0       	rjmp	.+30     	; 0x360 <__vector_1+0xa2>
+		case 3:lcd_string("7408 AND IC");break;
+ 342:	86 e8       	ldi	r24, 0x86	; 134
+ 344:	90 e0       	ldi	r25, 0x00	; 0
+ 346:	92 df       	rcall	.-220    	; 0x26c <lcd_string>
+ 348:	0b c0       	rjmp	.+22     	; 0x360 <__vector_1+0xa2>
+		case 4:lcd_string("7432 OR IC");break;
+ 34a:	82 e9       	ldi	r24, 0x92	; 146
+ 34c:	90 e0       	ldi	r25, 0x00	; 0
+ 34e:	8e df       	rcall	.-228    	; 0x26c <lcd_string>
+ 350:	07 c0       	rjmp	.+14     	; 0x360 <__vector_1+0xa2>
+		case 5:lcd_string("7486 EXOR IC");break;
+ 352:	8d e9       	ldi	r24, 0x9D	; 157
+ 354:	90 e0       	ldi	r25, 0x00	; 0
+ 356:	8a df       	rcall	.-236    	; 0x26c <lcd_string>
+ 358:	03 c0       	rjmp	.+6      	; 0x360 <__vector_1+0xa2>
+		case 6:lcd_string("Find IC");break;
+ 35a:	8a ea       	ldi	r24, 0xAA	; 170
+ 35c:	90 e0       	ldi	r25, 0x00	; 0
+ 35e:	86 df       	rcall	.-244    	; 0x26c <lcd_string>
+		
+	}
+}
+ 360:	ff 91       	pop	r31
+ 362:	ef 91       	pop	r30
+ 364:	bf 91       	pop	r27
+ 366:	af 91       	pop	r26
+ 368:	9f 91       	pop	r25
+ 36a:	8f 91       	pop	r24
+ 36c:	7f 91       	pop	r23
+ 36e:	6f 91       	pop	r22
+ 370:	5f 91       	pop	r21
+ 372:	4f 91       	pop	r20
+ 374:	3f 91       	pop	r19
+ 376:	2f 91       	pop	r18
+ 378:	0f 90       	pop	r0
+ 37a:	0f be       	out	0x3f, r0	; 63
+ 37c:	0f 90       	pop	r0
+ 37e:	1f 90       	pop	r1
+ 380:	18 95       	reti
+
+00000382 <Init_Type1>:
+}
+
+void Init_Type1()		// 1 & 2 Inputs and 3 Output pattern IC
+{
+	//Gate 1
+	CON1DDR |= (1<<CON1);	//output from controller and input of ic
+ 382:	bb 9a       	sbi	0x17, 3	; 23
+	CON2DDR |= (1<<CON2);	//output from controller and input of ic
+ 384:	ba 9a       	sbi	0x17, 2	; 23
+	CON3DDR &= ~(1<<CON3);	//input  to controller and output of ic
+ 386:	b9 98       	cbi	0x17, 1	; 23
+	CON3PORT &=~(1<<CON3);
+ 388:	c1 98       	cbi	0x18, 1	; 24
+	//DDRD &= ~(1 << PD2);        // see comment #1
+	//Gate 2	
+	CON4DDR |= (1<<CON4);	//output from controller and input of ic
+ 38a:	b8 9a       	sbi	0x17, 0	; 23
+	CON5DDR |= (1<<CON5);	//output from controller and input of ic
+ 38c:	8f 9a       	sbi	0x11, 7	; 17
+	CON6DDR &= ~(1<<CON6);	//input  to controller and output of ic
+ 38e:	8e 98       	cbi	0x11, 6	; 17
+	CON6PORT &=~(1<<CON6);
+ 390:	96 98       	cbi	0x12, 6	; 18
+	//Gate 3
+	CON10DDR |= (1<<CON10);	//output from controller and input of ic
+ 392:	be 9a       	sbi	0x17, 6	; 23
+	CON9DDR |= (1<<CON9);	//output from controller and input of ic
+ 394:	bf 9a       	sbi	0x17, 7	; 23
+	CON8DDR &= ~(1<<CON8);	//input  to controller and output of ic
+ 396:	8d 98       	cbi	0x11, 5	; 17
+	CON8PORT &=~(1<<CON8);
+ 398:	95 98       	cbi	0x12, 5	; 18
+	//Gate 4
+	CON13DDR |= (1<<CON13);	//output from controller and input of ic
+ 39a:	88 9a       	sbi	0x11, 0	; 17
+	CON12DDR |= (1<<CON12);	//output from controller and input of ic
+ 39c:	89 9a       	sbi	0x11, 1	; 17
+	CON11DDR &= ~(1<<CON11);	//input  to controller and output of ic
+ 39e:	8c 98       	cbi	0x11, 4	; 17
+	CON11PORT &=~(1<<CON11);
+ 3a0:	94 98       	cbi	0x12, 4	; 18
+ 3a2:	08 95       	ret
+
+000003a4 <Init_Type2>:
+	
+}
+void Init_Type2()		// 2 & 3 Inputs and 1 Output pattern IC
+{
+	//Gate 1
+	CON1DDR &= ~(1<<CON1);	////input  to controller and output of ic
+ 3a4:	bb 98       	cbi	0x17, 3	; 23
+	CON2DDR |= (1<<CON2);	//output from controller and input of ic
+ 3a6:	ba 9a       	sbi	0x17, 2	; 23
+	CON3DDR |= (1<<CON3);	//output from controller and input of ic
+ 3a8:	b9 9a       	sbi	0x17, 1	; 23
+	CON1PORT &=~(1<<CON1);
+ 3aa:	c3 98       	cbi	0x18, 3	; 24
+	//DDRD &= ~(1 << PD2);        // see comment #1
+	//Gate 2
+	CON4DDR &= ~(1<<CON4);	//input  to controller and output of ic
+ 3ac:	b8 98       	cbi	0x17, 0	; 23
+	CON5DDR |= (1<<CON5);	//output from controller and input of ic
+ 3ae:	8f 9a       	sbi	0x11, 7	; 17
+	CON6DDR |= (1<<CON6);	//output from controller and input of ic
+ 3b0:	8e 9a       	sbi	0x11, 6	; 17
+	CON4PORT &=~(1<<CON4);
+ 3b2:	c0 98       	cbi	0x18, 0	; 24
+	//Gate 3
+	CON10DDR &= ~(1<<CON10);	//input  to controller and output of ic
+ 3b4:	be 98       	cbi	0x17, 6	; 23
+	CON9DDR |= (1<<CON9);	//output from controller and input of ic
+ 3b6:	bf 9a       	sbi	0x17, 7	; 23
+	CON8DDR |= (1<<CON8);	//output from controller and input of ic
+ 3b8:	8d 9a       	sbi	0x11, 5	; 17
+	CON10PORT &=~(1<<CON10);
+ 3ba:	c6 98       	cbi	0x18, 6	; 24
+	//Gate 4
+	CON13DDR &= ~(1<<CON13);	//input  to controller and output of ic
+ 3bc:	88 98       	cbi	0x11, 0	; 17
+	CON12DDR |= (1<<CON12);	//output from controller and input of ic
+ 3be:	89 9a       	sbi	0x11, 1	; 17
+	CON11DDR |= (1<<CON11);	//output from controller and input of ic
+ 3c0:	8c 9a       	sbi	0x11, 4	; 17
+	CON13PORT &=~(1<<CON13);
+ 3c2:	90 98       	cbi	0x12, 0	; 18
+ 3c4:	08 95       	ret
+
+000003c6 <Init_Type3>:
+	
+}
+void Init_Type3()	//1 Input 2 Output of pattern IC
+{
+	//Gate1
+	CON1DDR |= (1<<CON1);		//output from controller and input to ic
+ 3c6:	bb 9a       	sbi	0x17, 3	; 23
+	CON2DDR &= ~(1<<CON2);		//input to controller and output from ic
+ 3c8:	ba 98       	cbi	0x17, 2	; 23
+	CON2PORT &= ~(1<<CON2PORT);
+ 3ca:	28 b3       	in	r18, 0x18	; 24
+ 3cc:	48 b3       	in	r20, 0x18	; 24
+ 3ce:	81 e0       	ldi	r24, 0x01	; 1
+ 3d0:	90 e0       	ldi	r25, 0x00	; 0
+ 3d2:	bc 01       	movw	r22, r24
+ 3d4:	02 c0       	rjmp	.+4      	; 0x3da <Init_Type3+0x14>
+ 3d6:	66 0f       	add	r22, r22
+ 3d8:	77 1f       	adc	r23, r23
+ 3da:	2a 95       	dec	r18
+ 3dc:	e2 f7       	brpl	.-8      	; 0x3d6 <Init_Type3+0x10>
+ 3de:	9b 01       	movw	r18, r22
+ 3e0:	20 95       	com	r18
+ 3e2:	30 95       	com	r19
+ 3e4:	24 23       	and	r18, r20
+ 3e6:	28 bb       	out	0x18, r18	; 24
+	//Gate2
+	CON3DDR |= (1<<CON3);		//output from controller and input to ic
+ 3e8:	b9 9a       	sbi	0x17, 1	; 23
+	CON4DDR &= ~(1<<CON4);		//input to controller and output from ic
+ 3ea:	b8 98       	cbi	0x17, 0	; 23
+	CON4PORT &= ~(1<<CON4PORT);
+ 3ec:	28 b3       	in	r18, 0x18	; 24
+ 3ee:	48 b3       	in	r20, 0x18	; 24
+ 3f0:	bc 01       	movw	r22, r24
+ 3f2:	02 c0       	rjmp	.+4      	; 0x3f8 <Init_Type3+0x32>
+ 3f4:	66 0f       	add	r22, r22
+ 3f6:	77 1f       	adc	r23, r23
+ 3f8:	2a 95       	dec	r18
+ 3fa:	e2 f7       	brpl	.-8      	; 0x3f4 <Init_Type3+0x2e>
+ 3fc:	9b 01       	movw	r18, r22
+ 3fe:	20 95       	com	r18
+ 400:	30 95       	com	r19
+ 402:	24 23       	and	r18, r20
+ 404:	28 bb       	out	0x18, r18	; 24
+	//Gate3
+	CON5DDR |= (1<<CON5);		//output from controller and input to ic
+ 406:	8f 9a       	sbi	0x11, 7	; 17
+	CON6DDR &= ~(1<<CON6);		//input to controller and output from ic
+ 408:	8e 98       	cbi	0x11, 6	; 17
+	CON6PORT &= ~(1<<CON6PORT);
+ 40a:	22 b3       	in	r18, 0x12	; 18
+ 40c:	42 b3       	in	r20, 0x12	; 18
+ 40e:	bc 01       	movw	r22, r24
+ 410:	02 c0       	rjmp	.+4      	; 0x416 <Init_Type3+0x50>
+ 412:	66 0f       	add	r22, r22
+ 414:	77 1f       	adc	r23, r23
+ 416:	2a 95       	dec	r18
+ 418:	e2 f7       	brpl	.-8      	; 0x412 <Init_Type3+0x4c>
+ 41a:	9b 01       	movw	r18, r22
+ 41c:	20 95       	com	r18
+ 41e:	30 95       	com	r19
+ 420:	24 23       	and	r18, r20
+ 422:	22 bb       	out	0x12, r18	; 18
+	//Gate4
+	CON9DDR |= (1<<CON9);		//output from controller and input to ic
+ 424:	bf 9a       	sbi	0x17, 7	; 23
+	CON8DDR &= ~(1<<CON8);		//input to controller and output from ic
+ 426:	8d 98       	cbi	0x11, 5	; 17
+	CON8PORT &= ~(1<<CON8PORT);
+ 428:	22 b3       	in	r18, 0x12	; 18
+ 42a:	42 b3       	in	r20, 0x12	; 18
+ 42c:	bc 01       	movw	r22, r24
+ 42e:	02 c0       	rjmp	.+4      	; 0x434 <Init_Type3+0x6e>
+ 430:	66 0f       	add	r22, r22
+ 432:	77 1f       	adc	r23, r23
+ 434:	2a 95       	dec	r18
+ 436:	e2 f7       	brpl	.-8      	; 0x430 <Init_Type3+0x6a>
+ 438:	9b 01       	movw	r18, r22
+ 43a:	20 95       	com	r18
+ 43c:	30 95       	com	r19
+ 43e:	24 23       	and	r18, r20
+ 440:	22 bb       	out	0x12, r18	; 18
+	//Gate5
+	CON11DDR |= (1<<CON11);		//output from controller and input to ic
+ 442:	8c 9a       	sbi	0x11, 4	; 17
+	CON10DDR &= ~(1<<CON10);		//input to controller and output from ic
+ 444:	be 98       	cbi	0x17, 6	; 23
+	CON10PORT &= ~(1<<CON10PORT);
+ 446:	28 b3       	in	r18, 0x18	; 24
+ 448:	48 b3       	in	r20, 0x18	; 24
+ 44a:	bc 01       	movw	r22, r24
+ 44c:	02 c0       	rjmp	.+4      	; 0x452 <Init_Type3+0x8c>
+ 44e:	66 0f       	add	r22, r22
+ 450:	77 1f       	adc	r23, r23
+ 452:	2a 95       	dec	r18
+ 454:	e2 f7       	brpl	.-8      	; 0x44e <Init_Type3+0x88>
+ 456:	9b 01       	movw	r18, r22
+ 458:	20 95       	com	r18
+ 45a:	30 95       	com	r19
+ 45c:	24 23       	and	r18, r20
+ 45e:	28 bb       	out	0x18, r18	; 24
+	//Gate6
+	CON13DDR |= (1<<CON13);		//output from controller and input to ic
+ 460:	88 9a       	sbi	0x11, 0	; 17
+	CON12DDR &= ~(1<<CON12);		//input to controller and output from ic
+ 462:	89 98       	cbi	0x11, 1	; 17
+	CON12PORT &= ~(1<<CON12PORT);
+ 464:	32 b3       	in	r19, 0x12	; 18
+ 466:	22 b3       	in	r18, 0x12	; 18
+ 468:	02 c0       	rjmp	.+4      	; 0x46e <__stack+0xf>
+ 46a:	88 0f       	add	r24, r24
+ 46c:	99 1f       	adc	r25, r25
+ 46e:	3a 95       	dec	r19
+ 470:	e2 f7       	brpl	.-8      	; 0x46a <__stack+0xb>
+ 472:	80 95       	com	r24
+ 474:	90 95       	com	r25
+ 476:	82 23       	and	r24, r18
+ 478:	82 bb       	out	0x12, r24	; 18
+ 47a:	08 95       	ret
+
+0000047c <put_signal_type1>:
+}
+
+void put_signal_type1(uint8_t o1,uint8_t o2,uint8_t gate)	//output signals from controller and inputs to ic
+{
+	switch(gate)
+ 47c:	42 30       	cpi	r20, 0x02	; 2
+ 47e:	a1 f0       	breq	.+40     	; 0x4a8 <put_signal_type1+0x2c>
+ 480:	18 f4       	brcc	.+6      	; 0x488 <put_signal_type1+0xc>
+ 482:	41 30       	cpi	r20, 0x01	; 1
+ 484:	31 f0       	breq	.+12     	; 0x492 <put_signal_type1+0x16>
+ 486:	08 95       	ret
+ 488:	43 30       	cpi	r20, 0x03	; 3
+ 48a:	c9 f0       	breq	.+50     	; 0x4be <put_signal_type1+0x42>
+ 48c:	44 30       	cpi	r20, 0x04	; 4
+ 48e:	11 f1       	breq	.+68     	; 0x4d4 <put_signal_type1+0x58>
+ 490:	08 95       	ret
+	{
+	case 1:	
+			if(o1==1)
+ 492:	81 30       	cpi	r24, 0x01	; 1
+ 494:	11 f4       	brne	.+4      	; 0x49a <put_signal_type1+0x1e>
+			CON1PORT |= (1<<CON1);
+ 496:	c3 9a       	sbi	0x18, 3	; 24
+ 498:	01 c0       	rjmp	.+2      	; 0x49c <put_signal_type1+0x20>
+			else
+			CON1PORT &= ~(1<<CON1);
+ 49a:	c3 98       	cbi	0x18, 3	; 24
+			
+			if(o2==1)
+ 49c:	61 30       	cpi	r22, 0x01	; 1
+ 49e:	11 f4       	brne	.+4      	; 0x4a4 <put_signal_type1+0x28>
+			CON2PORT |= (1<<CON2);	
+ 4a0:	c2 9a       	sbi	0x18, 2	; 24
+ 4a2:	08 95       	ret
+			else
+			CON2PORT &= ~(1<<CON2);
+ 4a4:	c2 98       	cbi	0x18, 2	; 24
+ 4a6:	08 95       	ret
+			
+			break;
+	
+	case 2:	
+			if(o1==1)
+ 4a8:	81 30       	cpi	r24, 0x01	; 1
+ 4aa:	11 f4       	brne	.+4      	; 0x4b0 <put_signal_type1+0x34>
+			CON4PORT |= (1<<CON4);
+ 4ac:	c0 9a       	sbi	0x18, 0	; 24
+ 4ae:	01 c0       	rjmp	.+2      	; 0x4b2 <put_signal_type1+0x36>
+			else
+			CON4PORT &= ~(1<<CON4);
+ 4b0:	c0 98       	cbi	0x18, 0	; 24
+			
+			if(o2==1)
+ 4b2:	61 30       	cpi	r22, 0x01	; 1
+ 4b4:	11 f4       	brne	.+4      	; 0x4ba <put_signal_type1+0x3e>
+			CON5PORT |= (1<<CON5);
+ 4b6:	97 9a       	sbi	0x12, 7	; 18
+ 4b8:	08 95       	ret
+			else
+			CON5PORT &= ~(1<<CON5);
+ 4ba:	97 98       	cbi	0x12, 7	; 18
+ 4bc:	08 95       	ret
+		
+			break;
+	
+	case 3:	
+			if(o1==1)
+ 4be:	81 30       	cpi	r24, 0x01	; 1
+ 4c0:	11 f4       	brne	.+4      	; 0x4c6 <put_signal_type1+0x4a>
+			CON10PORT |= (1<<CON10);
+ 4c2:	c6 9a       	sbi	0x18, 6	; 24
+ 4c4:	01 c0       	rjmp	.+2      	; 0x4c8 <put_signal_type1+0x4c>
+			else
+			CON10PORT &= ~(1<<CON10);
+ 4c6:	c6 98       	cbi	0x18, 6	; 24
+			
+			if(o2==1)
+ 4c8:	61 30       	cpi	r22, 0x01	; 1
+ 4ca:	11 f4       	brne	.+4      	; 0x4d0 <put_signal_type1+0x54>
+			CON9PORT |= (1<<CON9);
+ 4cc:	c7 9a       	sbi	0x18, 7	; 24
+ 4ce:	08 95       	ret
+			else
+			CON9PORT &= ~(1<<CON9);
+ 4d0:	c7 98       	cbi	0x18, 7	; 24
+ 4d2:	08 95       	ret
+	
+			break;
+	
+	case 4:	
+			if(o1==1)
+ 4d4:	81 30       	cpi	r24, 0x01	; 1
+ 4d6:	11 f4       	brne	.+4      	; 0x4dc <put_signal_type1+0x60>
+			CON13PORT |= (1<<CON13);
+ 4d8:	90 9a       	sbi	0x12, 0	; 18
+ 4da:	01 c0       	rjmp	.+2      	; 0x4de <put_signal_type1+0x62>
+			else
+			CON13PORT &= ~(1<<CON13);
+ 4dc:	90 98       	cbi	0x12, 0	; 18
+			
+			if(o2==1)
+ 4de:	61 30       	cpi	r22, 0x01	; 1
+ 4e0:	11 f4       	brne	.+4      	; 0x4e6 <put_signal_type1+0x6a>
+			CON12PORT |= (1<<CON12);
+ 4e2:	91 9a       	sbi	0x12, 1	; 18
+ 4e4:	08 95       	ret
+			else
+			CON12PORT &= ~(1<<CON12);
+ 4e6:	91 98       	cbi	0x12, 1	; 18
+ 4e8:	08 95       	ret
+
+000004ea <put_signal_type2>:
+			break;
+	}
+}
+void put_signal_type2(uint8_t o1,uint8_t o2,uint8_t gate)	//output signals from controller and inputs to ic
+{
+	switch(gate)
+ 4ea:	42 30       	cpi	r20, 0x02	; 2
+ 4ec:	a1 f0       	breq	.+40     	; 0x516 <put_signal_type2+0x2c>
+ 4ee:	18 f4       	brcc	.+6      	; 0x4f6 <put_signal_type2+0xc>
+ 4f0:	41 30       	cpi	r20, 0x01	; 1
+ 4f2:	31 f0       	breq	.+12     	; 0x500 <put_signal_type2+0x16>
+ 4f4:	08 95       	ret
+ 4f6:	43 30       	cpi	r20, 0x03	; 3
+ 4f8:	c9 f0       	breq	.+50     	; 0x52c <put_signal_type2+0x42>
+ 4fa:	44 30       	cpi	r20, 0x04	; 4
+ 4fc:	11 f1       	breq	.+68     	; 0x542 <put_signal_type2+0x58>
+ 4fe:	08 95       	ret
+	{
+		case 1:
+		if(o1==1)
+ 500:	81 30       	cpi	r24, 0x01	; 1
+ 502:	11 f4       	brne	.+4      	; 0x508 <put_signal_type2+0x1e>
+		CON2PORT |= (1<<CON2);
+ 504:	c2 9a       	sbi	0x18, 2	; 24
+ 506:	01 c0       	rjmp	.+2      	; 0x50a <put_signal_type2+0x20>
+		else
+		CON2PORT &= ~(1<<CON2);
+ 508:	c2 98       	cbi	0x18, 2	; 24
+		
+		if(o2==1)
+ 50a:	61 30       	cpi	r22, 0x01	; 1
+ 50c:	11 f4       	brne	.+4      	; 0x512 <put_signal_type2+0x28>
+		CON3PORT |= (1<<CON3);
+ 50e:	c1 9a       	sbi	0x18, 1	; 24
+ 510:	08 95       	ret
+		else
+		CON3PORT &= ~(1<<CON3);
+ 512:	c1 98       	cbi	0x18, 1	; 24
+ 514:	08 95       	ret
+		
+		break;
+		
+		case 2:
+		if(o1==1)
+ 516:	81 30       	cpi	r24, 0x01	; 1
+ 518:	11 f4       	brne	.+4      	; 0x51e <put_signal_type2+0x34>
+		CON5PORT |= (1<<CON5);
+ 51a:	97 9a       	sbi	0x12, 7	; 18
+ 51c:	01 c0       	rjmp	.+2      	; 0x520 <put_signal_type2+0x36>
+		else
+		CON5PORT &= ~(1<<CON5);
+ 51e:	97 98       	cbi	0x12, 7	; 18
+		
+		if(o2==1)
+ 520:	61 30       	cpi	r22, 0x01	; 1
+ 522:	11 f4       	brne	.+4      	; 0x528 <put_signal_type2+0x3e>
+		CON6PORT |= (1<<CON6);
+ 524:	96 9a       	sbi	0x12, 6	; 18
+ 526:	08 95       	ret
+		else
+		CON6PORT &= ~(1<<CON6);
+ 528:	96 98       	cbi	0x12, 6	; 18
+ 52a:	08 95       	ret
+		
+		break;
+		
+		case 3:
+		if(o1==1)
+ 52c:	81 30       	cpi	r24, 0x01	; 1
+ 52e:	11 f4       	brne	.+4      	; 0x534 <put_signal_type2+0x4a>
+		CON8PORT |= (1<<CON8);
+ 530:	95 9a       	sbi	0x12, 5	; 18
+ 532:	01 c0       	rjmp	.+2      	; 0x536 <put_signal_type2+0x4c>
+		else
+		CON8PORT &= ~(1<<CON8);
+ 534:	95 98       	cbi	0x12, 5	; 18
+		
+		if(o2==1)
+ 536:	61 30       	cpi	r22, 0x01	; 1
+ 538:	11 f4       	brne	.+4      	; 0x53e <put_signal_type2+0x54>
+		CON9PORT |= (1<<CON9);
+ 53a:	c7 9a       	sbi	0x18, 7	; 24
+ 53c:	08 95       	ret
+		else
+		CON9PORT &= ~(1<<CON9);
+ 53e:	c7 98       	cbi	0x18, 7	; 24
+ 540:	08 95       	ret
+		
+		break;
+		
+		case 4:
+		if(o1==1)
+ 542:	81 30       	cpi	r24, 0x01	; 1
+ 544:	11 f4       	brne	.+4      	; 0x54a <put_signal_type2+0x60>
+		CON11PORT |= (1<<CON11);
+ 546:	94 9a       	sbi	0x12, 4	; 18
+ 548:	01 c0       	rjmp	.+2      	; 0x54c <put_signal_type2+0x62>
+		else
+		CON11PORT &= ~(1<<CON11);
+ 54a:	94 98       	cbi	0x12, 4	; 18
+		
+		if(o2==1)
+ 54c:	61 30       	cpi	r22, 0x01	; 1
+ 54e:	11 f4       	brne	.+4      	; 0x554 <put_signal_type2+0x6a>
+		CON12PORT |= (1<<CON12);
+ 550:	91 9a       	sbi	0x12, 1	; 18
+ 552:	08 95       	ret
+		else
+		CON12PORT &= ~(1<<CON12);
+ 554:	91 98       	cbi	0x12, 1	; 18
+ 556:	08 95       	ret
+
+00000558 <put_signal_type3>:
+		break;
+	}
+}
+void put_signal_type3(uint8_t o1,uint8_t gate)
+{
+	switch(gate)
+ 558:	63 30       	cpi	r22, 0x03	; 3
+ 55a:	c1 f0       	breq	.+48     	; 0x58c <put_signal_type3+0x34>
+ 55c:	28 f4       	brcc	.+10     	; 0x568 <put_signal_type3+0x10>
+ 55e:	61 30       	cpi	r22, 0x01	; 1
+ 560:	49 f0       	breq	.+18     	; 0x574 <put_signal_type3+0x1c>
+ 562:	62 30       	cpi	r22, 0x02	; 2
+ 564:	69 f0       	breq	.+26     	; 0x580 <put_signal_type3+0x28>
+ 566:	08 95       	ret
+ 568:	65 30       	cpi	r22, 0x05	; 5
+ 56a:	e1 f0       	breq	.+56     	; 0x5a4 <put_signal_type3+0x4c>
+ 56c:	a8 f0       	brcs	.+42     	; 0x598 <put_signal_type3+0x40>
+ 56e:	66 30       	cpi	r22, 0x06	; 6
+ 570:	f9 f0       	breq	.+62     	; 0x5b0 <put_signal_type3+0x58>
+ 572:	08 95       	ret
+	{
+		case 1:if(o1 == 1)
+ 574:	81 30       	cpi	r24, 0x01	; 1
+ 576:	11 f4       	brne	.+4      	; 0x57c <put_signal_type3+0x24>
+			CON1PORT |= (1<<CON1);
+ 578:	c3 9a       	sbi	0x18, 3	; 24
+ 57a:	08 95       	ret
+			else
+			CON1PORT &= ~(1<<CON1);
+ 57c:	c3 98       	cbi	0x18, 3	; 24
+ 57e:	08 95       	ret
+			break;
+	case 2:if(o1 == 1)
+ 580:	81 30       	cpi	r24, 0x01	; 1
+ 582:	11 f4       	brne	.+4      	; 0x588 <put_signal_type3+0x30>
+			CON3PORT |= (1<<CON3);
+ 584:	c1 9a       	sbi	0x18, 1	; 24
+ 586:	08 95       	ret
+			else
+			CON3PORT &= ~(1<<CON3);
+ 588:	c1 98       	cbi	0x18, 1	; 24
+ 58a:	08 95       	ret
+			break;
+	case 3:if(o1 == 1)
+ 58c:	81 30       	cpi	r24, 0x01	; 1
+ 58e:	11 f4       	brne	.+4      	; 0x594 <put_signal_type3+0x3c>
+			CON5PORT |= (1<<CON5);
+ 590:	97 9a       	sbi	0x12, 7	; 18
+ 592:	08 95       	ret
+			else
+			CON5PORT &= ~(1<<CON5);
+ 594:	97 98       	cbi	0x12, 7	; 18
+ 596:	08 95       	ret
+			break;
+	case 4:if(o1 == 1)
+ 598:	81 30       	cpi	r24, 0x01	; 1
+ 59a:	11 f4       	brne	.+4      	; 0x5a0 <put_signal_type3+0x48>
+			CON9PORT |= (1<<CON9);
+ 59c:	c7 9a       	sbi	0x18, 7	; 24
+ 59e:	08 95       	ret
+			else
+			CON9PORT &= ~(1<<CON9);
+ 5a0:	c7 98       	cbi	0x18, 7	; 24
+ 5a2:	08 95       	ret
+			break;
+	case 5:if(o1 == 1)
+ 5a4:	81 30       	cpi	r24, 0x01	; 1
+ 5a6:	11 f4       	brne	.+4      	; 0x5ac <put_signal_type3+0x54>
+			CON11PORT |= (1<<CON11);
+ 5a8:	94 9a       	sbi	0x12, 4	; 18
+ 5aa:	08 95       	ret
+			else
+			CON11PORT &= ~(1<<CON11);
+ 5ac:	94 98       	cbi	0x12, 4	; 18
+ 5ae:	08 95       	ret
+			break;
+	case 6:if(o1 == 1)
+ 5b0:	81 30       	cpi	r24, 0x01	; 1
+ 5b2:	11 f4       	brne	.+4      	; 0x5b8 <put_signal_type3+0x60>
+			CON13PORT |= (1<<CON13);
+ 5b4:	90 9a       	sbi	0x12, 0	; 18
+ 5b6:	08 95       	ret
+			else
+			CON13PORT &= ~(1<<CON13);
+ 5b8:	90 98       	cbi	0x12, 0	; 18
+ 5ba:	08 95       	ret
+
+000005bc <get_signal_type1>:
+	}
+}
+
+uint8_t get_signal_type1(uint8_t gate)		// get outputs from ic
+{
+	switch(gate)
+ 5bc:	82 30       	cpi	r24, 0x02	; 2
+ 5be:	69 f0       	breq	.+26     	; 0x5da <get_signal_type1+0x1e>
+ 5c0:	18 f4       	brcc	.+6      	; 0x5c8 <get_signal_type1+0xc>
+ 5c2:	81 30       	cpi	r24, 0x01	; 1
+ 5c4:	31 f0       	breq	.+12     	; 0x5d2 <get_signal_type1+0x16>
+ 5c6:	17 c0       	rjmp	.+46     	; 0x5f6 <get_signal_type1+0x3a>
+ 5c8:	83 30       	cpi	r24, 0x03	; 3
+ 5ca:	61 f0       	breq	.+24     	; 0x5e4 <get_signal_type1+0x28>
+ 5cc:	84 30       	cpi	r24, 0x04	; 4
+ 5ce:	79 f0       	breq	.+30     	; 0x5ee <get_signal_type1+0x32>
+ 5d0:	12 c0       	rjmp	.+36     	; 0x5f6 <get_signal_type1+0x3a>
+	{
+		case 1: if(CON3PIN & (1<<CON3)) return 1;else return 0;break;
+ 5d2:	86 b3       	in	r24, 0x16	; 22
+ 5d4:	86 95       	lsr	r24
+ 5d6:	81 70       	andi	r24, 0x01	; 1
+ 5d8:	08 95       	ret
+		case 2: if(CON6PIN & (1<<CON6)) return 1;else return 0;break;
+ 5da:	80 b3       	in	r24, 0x10	; 16
+ 5dc:	86 fb       	bst	r24, 6
+ 5de:	88 27       	eor	r24, r24
+ 5e0:	80 f9       	bld	r24, 0
+ 5e2:	08 95       	ret
+		case 3: if(CON8PIN & (1<<CON8)) return 1;else return 0;break;
+ 5e4:	80 b3       	in	r24, 0x10	; 16
+ 5e6:	85 fb       	bst	r24, 5
+ 5e8:	88 27       	eor	r24, r24
+ 5ea:	80 f9       	bld	r24, 0
+ 5ec:	08 95       	ret
+		case 4: if(CON11PIN & (1<<CON11)) return 1;else return 0;break;
+ 5ee:	80 b3       	in	r24, 0x10	; 16
+ 5f0:	82 95       	swap	r24
+ 5f2:	81 70       	andi	r24, 0x01	; 1
+ 5f4:	08 95       	ret
+	}
+	return 0;
+ 5f6:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 5f8:	08 95       	ret
+
+000005fa <get_signal_type2>:
+uint8_t get_signal_type2(uint8_t gate)		// get outputs from ic
+{
+	switch(gate)
+ 5fa:	82 30       	cpi	r24, 0x02	; 2
+ 5fc:	71 f0       	breq	.+28     	; 0x61a <get_signal_type2+0x20>
+ 5fe:	18 f4       	brcc	.+6      	; 0x606 <get_signal_type2+0xc>
+ 600:	81 30       	cpi	r24, 0x01	; 1
+ 602:	31 f0       	breq	.+12     	; 0x610 <get_signal_type2+0x16>
+ 604:	15 c0       	rjmp	.+42     	; 0x630 <get_signal_type2+0x36>
+ 606:	83 30       	cpi	r24, 0x03	; 3
+ 608:	59 f0       	breq	.+22     	; 0x620 <get_signal_type2+0x26>
+ 60a:	84 30       	cpi	r24, 0x04	; 4
+ 60c:	71 f0       	breq	.+28     	; 0x62a <get_signal_type2+0x30>
+ 60e:	10 c0       	rjmp	.+32     	; 0x630 <get_signal_type2+0x36>
+	{
+		case 1: if(CON1PIN & (1<<CON1)) return 1;else return 0;break;
+ 610:	86 b3       	in	r24, 0x16	; 22
+ 612:	83 fb       	bst	r24, 3
+ 614:	88 27       	eor	r24, r24
+ 616:	80 f9       	bld	r24, 0
+ 618:	08 95       	ret
+		case 2: if(CON4PIN & (1<<CON4)) return 1;else return 0;break;
+ 61a:	86 b3       	in	r24, 0x16	; 22
+ 61c:	81 70       	andi	r24, 0x01	; 1
+ 61e:	08 95       	ret
+		case 3: if(CON10PIN & (1<<CON10)) return 1;else return 0;break;
+ 620:	86 b3       	in	r24, 0x16	; 22
+ 622:	86 fb       	bst	r24, 6
+ 624:	88 27       	eor	r24, r24
+ 626:	80 f9       	bld	r24, 0
+ 628:	08 95       	ret
+		case 4: if(CON13PIN & (1<<CON13)) return 1;else return 0;break;
+ 62a:	80 b3       	in	r24, 0x10	; 16
+ 62c:	81 70       	andi	r24, 0x01	; 1
+ 62e:	08 95       	ret
+	}
+	return 0;
+ 630:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 632:	08 95       	ret
+
+00000634 <get_signal_type3>:
+uint8_t get_signal_type3(uint8_t gate)
+{
+	switch(gate)
+ 634:	83 30       	cpi	r24, 0x03	; 3
+ 636:	a1 f0       	breq	.+40     	; 0x660 <get_signal_type3+0x2c>
+ 638:	28 f4       	brcc	.+10     	; 0x644 <get_signal_type3+0x10>
+ 63a:	81 30       	cpi	r24, 0x01	; 1
+ 63c:	49 f0       	breq	.+18     	; 0x650 <get_signal_type3+0x1c>
+ 63e:	82 30       	cpi	r24, 0x02	; 2
+ 640:	61 f0       	breq	.+24     	; 0x65a <get_signal_type3+0x26>
+ 642:	21 c0       	rjmp	.+66     	; 0x686 <get_signal_type3+0x52>
+ 644:	85 30       	cpi	r24, 0x05	; 5
+ 646:	b1 f0       	breq	.+44     	; 0x674 <get_signal_type3+0x40>
+ 648:	80 f0       	brcs	.+32     	; 0x66a <get_signal_type3+0x36>
+ 64a:	86 30       	cpi	r24, 0x06	; 6
+ 64c:	c1 f0       	breq	.+48     	; 0x67e <get_signal_type3+0x4a>
+ 64e:	1b c0       	rjmp	.+54     	; 0x686 <get_signal_type3+0x52>
+	{
+		case 1:if(CON2PIN & (1<<CON2)) return 1;else return 0;break;
+ 650:	86 b3       	in	r24, 0x16	; 22
+ 652:	82 fb       	bst	r24, 2
+ 654:	88 27       	eor	r24, r24
+ 656:	80 f9       	bld	r24, 0
+ 658:	08 95       	ret
+		case 2:if(CON4PIN & (1<<CON4)) return 1;else return 0;break;
+ 65a:	86 b3       	in	r24, 0x16	; 22
+ 65c:	81 70       	andi	r24, 0x01	; 1
+ 65e:	08 95       	ret
+		case 3:if(CON6PIN & (1<<CON6)) return 1;else return 0;break;
+ 660:	80 b3       	in	r24, 0x10	; 16
+ 662:	86 fb       	bst	r24, 6
+ 664:	88 27       	eor	r24, r24
+ 666:	80 f9       	bld	r24, 0
+ 668:	08 95       	ret
+		case 4:if(CON8PIN & (1<<CON8)) return 1;else return 0;break;
+ 66a:	80 b3       	in	r24, 0x10	; 16
+ 66c:	85 fb       	bst	r24, 5
+ 66e:	88 27       	eor	r24, r24
+ 670:	80 f9       	bld	r24, 0
+ 672:	08 95       	ret
+		case 5:if(CON10PIN & (1<<CON10)) return 1;else return 0;break;
+ 674:	86 b3       	in	r24, 0x16	; 22
+ 676:	86 fb       	bst	r24, 6
+ 678:	88 27       	eor	r24, r24
+ 67a:	80 f9       	bld	r24, 0
+ 67c:	08 95       	ret
+		case 6:if(CON12PIN & (1<<CON12)) return 1;else return 0;break;
+ 67e:	80 b3       	in	r24, 0x10	; 16
+ 680:	86 95       	lsr	r24
+ 682:	81 70       	andi	r24, 0x01	; 1
+ 684:	08 95       	ret
+	}
+}
+ 686:	08 95       	ret
+
+00000688 <Check_gate_type1>:
+
+uint8_t Check_gate_type1(uint8_t t1,uint8_t t2,uint8_t t3,uint8_t t4,uint8_t gate) //t1,t2,t3,t4 are valid outputs from ic
+{
+ 688:	ef 92       	push	r14
+ 68a:	ff 92       	push	r15
+ 68c:	0f 93       	push	r16
+ 68e:	1f 93       	push	r17
+ 690:	cf 93       	push	r28
+ 692:	df 93       	push	r29
+ 694:	e8 2e       	mov	r14, r24
+ 696:	f6 2e       	mov	r15, r22
+ 698:	14 2f       	mov	r17, r20
+ 69a:	d2 2f       	mov	r29, r18
+	uint8_t ticks=0;
+	
+	put_signal_type1(0,0,gate);
+ 69c:	40 2f       	mov	r20, r16
+ 69e:	60 e0       	ldi	r22, 0x00	; 0
+ 6a0:	80 e0       	ldi	r24, 0x00	; 0
+ 6a2:	ec de       	rcall	.-552    	; 0x47c <put_signal_type1>
+ 6a4:	8d ee       	ldi	r24, 0xED	; 237
+ 6a6:	92 e0       	ldi	r25, 0x02	; 2
+ 6a8:	01 97       	sbiw	r24, 0x01	; 1
+ 6aa:	f1 f7       	brne	.-4      	; 0x6a8 <Check_gate_type1+0x20>
+ 6ac:	00 c0       	rjmp	.+0      	; 0x6ae <Check_gate_type1+0x26>
+ 6ae:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type1(gate) == t1)
+ 6b0:	80 2f       	mov	r24, r16
+ 6b2:	84 df       	rcall	.-248    	; 0x5bc <get_signal_type1>
+ 6b4:	c1 e0       	ldi	r28, 0x01	; 1
+ 6b6:	8e 11       	cpse	r24, r14
+ 6b8:	c0 e0       	ldi	r28, 0x00	; 0
+	ticks++;
+	//lcd_print(1,2,get_signal_type1(gate),1);
+	
+	put_signal_type1(0,1,gate);
+ 6ba:	40 2f       	mov	r20, r16
+ 6bc:	61 e0       	ldi	r22, 0x01	; 1
+ 6be:	80 e0       	ldi	r24, 0x00	; 0
+ 6c0:	dd de       	rcall	.-582    	; 0x47c <put_signal_type1>
+ 6c2:	8d ee       	ldi	r24, 0xED	; 237
+ 6c4:	92 e0       	ldi	r25, 0x02	; 2
+ 6c6:	01 97       	sbiw	r24, 0x01	; 1
+ 6c8:	f1 f7       	brne	.-4      	; 0x6c6 <Check_gate_type1+0x3e>
+ 6ca:	00 c0       	rjmp	.+0      	; 0x6cc <Check_gate_type1+0x44>
+ 6cc:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type1(gate) == t2)
+ 6ce:	80 2f       	mov	r24, r16
+ 6d0:	75 df       	rcall	.-278    	; 0x5bc <get_signal_type1>
+ 6d2:	8f 11       	cpse	r24, r15
+ 6d4:	01 c0       	rjmp	.+2      	; 0x6d8 <Check_gate_type1+0x50>
+	ticks++;
+ 6d6:	cf 5f       	subi	r28, 0xFF	; 255
+	//lcd_print(1,3,get_signal_type1(gate),1);
+	
+	put_signal_type1(1,0,gate);
+ 6d8:	40 2f       	mov	r20, r16
+ 6da:	60 e0       	ldi	r22, 0x00	; 0
+ 6dc:	81 e0       	ldi	r24, 0x01	; 1
+ 6de:	ce de       	rcall	.-612    	; 0x47c <put_signal_type1>
+ 6e0:	8d ee       	ldi	r24, 0xED	; 237
+ 6e2:	92 e0       	ldi	r25, 0x02	; 2
+ 6e4:	01 97       	sbiw	r24, 0x01	; 1
+ 6e6:	f1 f7       	brne	.-4      	; 0x6e4 <Check_gate_type1+0x5c>
+ 6e8:	00 c0       	rjmp	.+0      	; 0x6ea <Check_gate_type1+0x62>
+ 6ea:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type1(gate) == t3)
+ 6ec:	80 2f       	mov	r24, r16
+ 6ee:	66 df       	rcall	.-308    	; 0x5bc <get_signal_type1>
+ 6f0:	81 13       	cpse	r24, r17
+ 6f2:	01 c0       	rjmp	.+2      	; 0x6f6 <Check_gate_type1+0x6e>
+	ticks++;
+ 6f4:	cf 5f       	subi	r28, 0xFF	; 255
+	//lcd_print(1,4,get_signal_type1(gate),1);
+	
+	put_signal_type1(1,1,gate);
+ 6f6:	40 2f       	mov	r20, r16
+ 6f8:	61 e0       	ldi	r22, 0x01	; 1
+ 6fa:	81 e0       	ldi	r24, 0x01	; 1
+ 6fc:	bf de       	rcall	.-642    	; 0x47c <put_signal_type1>
+ 6fe:	8d ee       	ldi	r24, 0xED	; 237
+ 700:	92 e0       	ldi	r25, 0x02	; 2
+ 702:	01 97       	sbiw	r24, 0x01	; 1
+ 704:	f1 f7       	brne	.-4      	; 0x702 <Check_gate_type1+0x7a>
+ 706:	00 c0       	rjmp	.+0      	; 0x708 <Check_gate_type1+0x80>
+ 708:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type1(gate) == t4)
+ 70a:	80 2f       	mov	r24, r16
+ 70c:	57 df       	rcall	.-338    	; 0x5bc <get_signal_type1>
+ 70e:	8d 13       	cpse	r24, r29
+ 710:	01 c0       	rjmp	.+2      	; 0x714 <Check_gate_type1+0x8c>
+	ticks++;
+ 712:	cf 5f       	subi	r28, 0xFF	; 255
+	//lcd_print(1,5,get_signal_type1(gate),1);
+	
+	put_signal_type1(0,0,gate);
+ 714:	40 2f       	mov	r20, r16
+ 716:	60 e0       	ldi	r22, 0x00	; 0
+ 718:	80 e0       	ldi	r24, 0x00	; 0
+ 71a:	b0 de       	rcall	.-672    	; 0x47c <put_signal_type1>
+ 71c:	8d ee       	ldi	r24, 0xED	; 237
+ 71e:	92 e0       	ldi	r25, 0x02	; 2
+ 720:	01 97       	sbiw	r24, 0x01	; 1
+ 722:	f1 f7       	brne	.-4      	; 0x720 <Check_gate_type1+0x98>
+ 724:	00 c0       	rjmp	.+0      	; 0x726 <Check_gate_type1+0x9e>
+ 726:	00 00       	nop
+	_delay_ms(3);
+	
+	return ticks;
+}
+ 728:	8c 2f       	mov	r24, r28
+ 72a:	df 91       	pop	r29
+ 72c:	cf 91       	pop	r28
+ 72e:	1f 91       	pop	r17
+ 730:	0f 91       	pop	r16
+ 732:	ff 90       	pop	r15
+ 734:	ef 90       	pop	r14
+ 736:	08 95       	ret
+
+00000738 <Check_gate_type2>:
+uint8_t Check_gate_type2(uint8_t t1,uint8_t t2,uint8_t t3,uint8_t t4,uint8_t gate) //t1,t2,t3,t4 are valid outputs from ic
+{
+ 738:	ef 92       	push	r14
+ 73a:	ff 92       	push	r15
+ 73c:	0f 93       	push	r16
+ 73e:	1f 93       	push	r17
+ 740:	cf 93       	push	r28
+ 742:	df 93       	push	r29
+ 744:	e8 2e       	mov	r14, r24
+ 746:	f6 2e       	mov	r15, r22
+ 748:	14 2f       	mov	r17, r20
+ 74a:	d2 2f       	mov	r29, r18
+	uint8_t ticks=0;
+	
+	put_signal_type2(0,0,gate);
+ 74c:	40 2f       	mov	r20, r16
+ 74e:	60 e0       	ldi	r22, 0x00	; 0
+ 750:	80 e0       	ldi	r24, 0x00	; 0
+ 752:	cb de       	rcall	.-618    	; 0x4ea <put_signal_type2>
+ 754:	8d ee       	ldi	r24, 0xED	; 237
+ 756:	92 e0       	ldi	r25, 0x02	; 2
+ 758:	01 97       	sbiw	r24, 0x01	; 1
+ 75a:	f1 f7       	brne	.-4      	; 0x758 <Check_gate_type2+0x20>
+ 75c:	00 c0       	rjmp	.+0      	; 0x75e <Check_gate_type2+0x26>
+ 75e:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type2(gate) == t1)
+ 760:	80 2f       	mov	r24, r16
+ 762:	4b df       	rcall	.-362    	; 0x5fa <get_signal_type2>
+ 764:	c1 e0       	ldi	r28, 0x01	; 1
+ 766:	8e 11       	cpse	r24, r14
+ 768:	c0 e0       	ldi	r28, 0x00	; 0
+	ticks++;
+	//lcd_print(1,2,get_signal_type1(gate),1);
+	
+	put_signal_type2(0,1,gate);
+ 76a:	40 2f       	mov	r20, r16
+ 76c:	61 e0       	ldi	r22, 0x01	; 1
+ 76e:	80 e0       	ldi	r24, 0x00	; 0
+ 770:	bc de       	rcall	.-648    	; 0x4ea <put_signal_type2>
+ 772:	8d ee       	ldi	r24, 0xED	; 237
+ 774:	92 e0       	ldi	r25, 0x02	; 2
+ 776:	01 97       	sbiw	r24, 0x01	; 1
+ 778:	f1 f7       	brne	.-4      	; 0x776 <Check_gate_type2+0x3e>
+ 77a:	00 c0       	rjmp	.+0      	; 0x77c <Check_gate_type2+0x44>
+ 77c:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type2(gate) == t2)
+ 77e:	80 2f       	mov	r24, r16
+ 780:	3c df       	rcall	.-392    	; 0x5fa <get_signal_type2>
+ 782:	8f 11       	cpse	r24, r15
+ 784:	01 c0       	rjmp	.+2      	; 0x788 <Check_gate_type2+0x50>
+	ticks++;
+ 786:	cf 5f       	subi	r28, 0xFF	; 255
+	//lcd_print(1,3,get_signal_type1(gate),1);
+	
+	put_signal_type2(1,0,gate);
+ 788:	40 2f       	mov	r20, r16
+ 78a:	60 e0       	ldi	r22, 0x00	; 0
+ 78c:	81 e0       	ldi	r24, 0x01	; 1
+ 78e:	ad de       	rcall	.-678    	; 0x4ea <put_signal_type2>
+ 790:	8d ee       	ldi	r24, 0xED	; 237
+ 792:	92 e0       	ldi	r25, 0x02	; 2
+ 794:	01 97       	sbiw	r24, 0x01	; 1
+ 796:	f1 f7       	brne	.-4      	; 0x794 <Check_gate_type2+0x5c>
+ 798:	00 c0       	rjmp	.+0      	; 0x79a <Check_gate_type2+0x62>
+ 79a:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type2(gate) == t3)
+ 79c:	80 2f       	mov	r24, r16
+ 79e:	2d df       	rcall	.-422    	; 0x5fa <get_signal_type2>
+ 7a0:	81 13       	cpse	r24, r17
+ 7a2:	01 c0       	rjmp	.+2      	; 0x7a6 <Check_gate_type2+0x6e>
+	ticks++;
+ 7a4:	cf 5f       	subi	r28, 0xFF	; 255
+	//lcd_print(1,4,get_signal_type1(gate),1);
+	
+	put_signal_type2(1,1,gate);
+ 7a6:	40 2f       	mov	r20, r16
+ 7a8:	61 e0       	ldi	r22, 0x01	; 1
+ 7aa:	81 e0       	ldi	r24, 0x01	; 1
+ 7ac:	9e de       	rcall	.-708    	; 0x4ea <put_signal_type2>
+ 7ae:	8d ee       	ldi	r24, 0xED	; 237
+ 7b0:	92 e0       	ldi	r25, 0x02	; 2
+ 7b2:	01 97       	sbiw	r24, 0x01	; 1
+ 7b4:	f1 f7       	brne	.-4      	; 0x7b2 <Check_gate_type2+0x7a>
+ 7b6:	00 c0       	rjmp	.+0      	; 0x7b8 <Check_gate_type2+0x80>
+ 7b8:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type2(gate) == t4)
+ 7ba:	80 2f       	mov	r24, r16
+ 7bc:	1e df       	rcall	.-452    	; 0x5fa <get_signal_type2>
+ 7be:	8d 13       	cpse	r24, r29
+ 7c0:	01 c0       	rjmp	.+2      	; 0x7c4 <Check_gate_type2+0x8c>
+	ticks++;
+ 7c2:	cf 5f       	subi	r28, 0xFF	; 255
+	//lcd_print(1,5,get_signal_type1(gate),1);
+	
+	put_signal_type2(0,0,gate);
+ 7c4:	40 2f       	mov	r20, r16
+ 7c6:	60 e0       	ldi	r22, 0x00	; 0
+ 7c8:	80 e0       	ldi	r24, 0x00	; 0
+ 7ca:	8f de       	rcall	.-738    	; 0x4ea <put_signal_type2>
+ 7cc:	8d ee       	ldi	r24, 0xED	; 237
+ 7ce:	92 e0       	ldi	r25, 0x02	; 2
+ 7d0:	01 97       	sbiw	r24, 0x01	; 1
+ 7d2:	f1 f7       	brne	.-4      	; 0x7d0 <Check_gate_type2+0x98>
+ 7d4:	00 c0       	rjmp	.+0      	; 0x7d6 <Check_gate_type2+0x9e>
+ 7d6:	00 00       	nop
+	_delay_ms(3);
+	
+	return ticks;
+}
+ 7d8:	8c 2f       	mov	r24, r28
+ 7da:	df 91       	pop	r29
+ 7dc:	cf 91       	pop	r28
+ 7de:	1f 91       	pop	r17
+ 7e0:	0f 91       	pop	r16
+ 7e2:	ff 90       	pop	r15
+ 7e4:	ef 90       	pop	r14
+ 7e6:	08 95       	ret
+
+000007e8 <Check_gate_type3>:
+uint8_t Check_gate_type3(uint8_t t1,uint8_t t2,uint8_t gate)
+{
+ 7e8:	0f 93       	push	r16
+ 7ea:	1f 93       	push	r17
+ 7ec:	cf 93       	push	r28
+ 7ee:	df 93       	push	r29
+ 7f0:	08 2f       	mov	r16, r24
+ 7f2:	16 2f       	mov	r17, r22
+ 7f4:	c4 2f       	mov	r28, r20
+	uint8_t ticks=0;
+	put_signal_type3(0,gate);
+ 7f6:	64 2f       	mov	r22, r20
+ 7f8:	80 e0       	ldi	r24, 0x00	; 0
+ 7fa:	ae de       	rcall	.-676    	; 0x558 <put_signal_type3>
+ 7fc:	8d ee       	ldi	r24, 0xED	; 237
+ 7fe:	92 e0       	ldi	r25, 0x02	; 2
+ 800:	01 97       	sbiw	r24, 0x01	; 1
+ 802:	f1 f7       	brne	.-4      	; 0x800 <Check_gate_type3+0x18>
+ 804:	00 c0       	rjmp	.+0      	; 0x806 <Check_gate_type3+0x1e>
+ 806:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type3(gate) == t1)
+ 808:	8c 2f       	mov	r24, r28
+ 80a:	14 df       	rcall	.-472    	; 0x634 <get_signal_type3>
+ 80c:	d1 e0       	ldi	r29, 0x01	; 1
+ 80e:	80 13       	cpse	r24, r16
+ 810:	d0 e0       	ldi	r29, 0x00	; 0
+	ticks++;
+	
+	
+	put_signal_type3(1,gate);
+ 812:	6c 2f       	mov	r22, r28
+ 814:	81 e0       	ldi	r24, 0x01	; 1
+ 816:	a0 de       	rcall	.-704    	; 0x558 <put_signal_type3>
+ 818:	8d ee       	ldi	r24, 0xED	; 237
+ 81a:	92 e0       	ldi	r25, 0x02	; 2
+ 81c:	01 97       	sbiw	r24, 0x01	; 1
+ 81e:	f1 f7       	brne	.-4      	; 0x81c <Check_gate_type3+0x34>
+ 820:	00 c0       	rjmp	.+0      	; 0x822 <Check_gate_type3+0x3a>
+ 822:	00 00       	nop
+	_delay_ms(3);
+	if(get_signal_type3(gate) == t2)
+ 824:	8c 2f       	mov	r24, r28
+ 826:	06 df       	rcall	.-500    	; 0x634 <get_signal_type3>
+ 828:	81 13       	cpse	r24, r17
+ 82a:	01 c0       	rjmp	.+2      	; 0x82e <Check_gate_type3+0x46>
+	ticks++;
+ 82c:	df 5f       	subi	r29, 0xFF	; 255
+	
+	put_signal_type3(0,gate);
+ 82e:	6c 2f       	mov	r22, r28
+ 830:	80 e0       	ldi	r24, 0x00	; 0
+ 832:	92 de       	rcall	.-732    	; 0x558 <put_signal_type3>
+ 834:	8d ee       	ldi	r24, 0xED	; 237
+ 836:	92 e0       	ldi	r25, 0x02	; 2
+ 838:	01 97       	sbiw	r24, 0x01	; 1
+ 83a:	f1 f7       	brne	.-4      	; 0x838 <Check_gate_type3+0x50>
+ 83c:	00 c0       	rjmp	.+0      	; 0x83e <Check_gate_type3+0x56>
+ 83e:	00 00       	nop
+	_delay_ms(3);
+	
+	return ticks;
+}
+ 840:	8d 2f       	mov	r24, r29
+ 842:	df 91       	pop	r29
+ 844:	cf 91       	pop	r28
+ 846:	1f 91       	pop	r17
+ 848:	0f 91       	pop	r16
+ 84a:	08 95       	ret
+
+0000084c <IC_7404>:
+		if(Check_gate_type1(1,1,1,0,4) == 4)
+			g4 = 1;
+		IC_Result(g1,g2,g3,g4);
+}
+void IC_7404()
+{
+ 84c:	ef 92       	push	r14
+ 84e:	ff 92       	push	r15
+ 850:	0f 93       	push	r16
+ 852:	1f 93       	push	r17
+ 854:	cf 93       	push	r28
+ 856:	df 93       	push	r29
+	uint8_t g1=0,g2=0,g3=0,g4=0,g5=0,g6=0; //1 means gates are working fine and 0 means not fine
+	
+		lcd_string("IC 7404 NOT");
+ 858:	82 eb       	ldi	r24, 0xB2	; 178
+ 85a:	90 e0       	ldi	r25, 0x00	; 0
+ 85c:	07 dd       	rcall	.-1522   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ 85e:	62 e0       	ldi	r22, 0x02	; 2
+ 860:	82 e0       	ldi	r24, 0x02	; 2
+ 862:	12 dd       	rcall	.-1500   	; 0x288 <lcd_cursor>
+		//send output from controller as inputs to ic
+		Init_Type3();
+ 864:	b0 dd       	rcall	.-1184   	; 0x3c6 <Init_Type3>
+		
+		if(Check_gate_type3(1,0,1) == 2)
+ 866:	41 e0       	ldi	r20, 0x01	; 1
+ 868:	60 e0       	ldi	r22, 0x00	; 0
+ 86a:	81 e0       	ldi	r24, 0x01	; 1
+ 86c:	bd df       	rcall	.-134    	; 0x7e8 <Check_gate_type3>
+ 86e:	e8 2e       	mov	r14, r24
+			g1 = 1;
+		if(Check_gate_type3(1,0,2) == 2)
+ 870:	42 e0       	ldi	r20, 0x02	; 2
+ 872:	60 e0       	ldi	r22, 0x00	; 0
+ 874:	81 e0       	ldi	r24, 0x01	; 1
+ 876:	b8 df       	rcall	.-144    	; 0x7e8 <Check_gate_type3>
+ 878:	c1 e0       	ldi	r28, 0x01	; 1
+ 87a:	82 30       	cpi	r24, 0x02	; 2
+ 87c:	09 f0       	breq	.+2      	; 0x880 <IC_7404+0x34>
+ 87e:	c0 e0       	ldi	r28, 0x00	; 0
+			g2 = 1;
+		if(Check_gate_type3(1,0,3) == 2)
+ 880:	43 e0       	ldi	r20, 0x03	; 3
+ 882:	60 e0       	ldi	r22, 0x00	; 0
+ 884:	81 e0       	ldi	r24, 0x01	; 1
+ 886:	b0 df       	rcall	.-160    	; 0x7e8 <Check_gate_type3>
+ 888:	d1 e0       	ldi	r29, 0x01	; 1
+ 88a:	82 30       	cpi	r24, 0x02	; 2
+ 88c:	09 f0       	breq	.+2      	; 0x890 <IC_7404+0x44>
+ 88e:	d0 e0       	ldi	r29, 0x00	; 0
+			g3 = 1;
+		if(Check_gate_type3(1,0,4) == 2)
+ 890:	44 e0       	ldi	r20, 0x04	; 4
+ 892:	60 e0       	ldi	r22, 0x00	; 0
+ 894:	81 e0       	ldi	r24, 0x01	; 1
+ 896:	a8 df       	rcall	.-176    	; 0x7e8 <Check_gate_type3>
+ 898:	11 e0       	ldi	r17, 0x01	; 1
+ 89a:	82 30       	cpi	r24, 0x02	; 2
+ 89c:	09 f0       	breq	.+2      	; 0x8a0 <IC_7404+0x54>
+ 89e:	10 e0       	ldi	r17, 0x00	; 0
+			g4 = 1;
+		if(Check_gate_type3(1,0,5) == 2)
+ 8a0:	45 e0       	ldi	r20, 0x05	; 5
+ 8a2:	60 e0       	ldi	r22, 0x00	; 0
+ 8a4:	81 e0       	ldi	r24, 0x01	; 1
+ 8a6:	a0 df       	rcall	.-192    	; 0x7e8 <Check_gate_type3>
+ 8a8:	01 e0       	ldi	r16, 0x01	; 1
+ 8aa:	82 30       	cpi	r24, 0x02	; 2
+ 8ac:	09 f0       	breq	.+2      	; 0x8b0 <IC_7404+0x64>
+ 8ae:	00 e0       	ldi	r16, 0x00	; 0
+			g5 = 1;
+		if(Check_gate_type3(1,0,6) == 2)
+ 8b0:	46 e0       	ldi	r20, 0x06	; 6
+ 8b2:	60 e0       	ldi	r22, 0x00	; 0
+ 8b4:	81 e0       	ldi	r24, 0x01	; 1
+ 8b6:	98 df       	rcall	.-208    	; 0x7e8 <Check_gate_type3>
+ 8b8:	ff 24       	eor	r15, r15
+ 8ba:	f3 94       	inc	r15
+ 8bc:	82 30       	cpi	r24, 0x02	; 2
+ 8be:	09 f0       	breq	.+2      	; 0x8c2 <IC_7404+0x76>
+ 8c0:	f1 2c       	mov	r15, r1
+			g6 = 1;
+		
+		if(g1 == 1 && g2 == 1 && g3 == 1 && g4 == 1 && g5 == 1 && g6 == 1)
+ 8c2:	82 e0       	ldi	r24, 0x02	; 2
+ 8c4:	e8 12       	cpse	r14, r24
+ 8c6:	34 c0       	rjmp	.+104    	; 0x930 <IC_7404+0xe4>
+ 8c8:	c1 30       	cpi	r28, 0x01	; 1
+ 8ca:	59 f5       	brne	.+86     	; 0x922 <IC_7404+0xd6>
+ 8cc:	d1 30       	cpi	r29, 0x01	; 1
+ 8ce:	49 f5       	brne	.+82     	; 0x922 <IC_7404+0xd6>
+ 8d0:	11 30       	cpi	r17, 0x01	; 1
+ 8d2:	39 f5       	brne	.+78     	; 0x922 <IC_7404+0xd6>
+ 8d4:	01 30       	cpi	r16, 0x01	; 1
+ 8d6:	29 f5       	brne	.+74     	; 0x922 <IC_7404+0xd6>
+ 8d8:	81 e0       	ldi	r24, 0x01	; 1
+ 8da:	f8 12       	cpse	r15, r24
+ 8dc:	22 c0       	rjmp	.+68     	; 0x922 <IC_7404+0xd6>
+			lcd_string("All Gates OK");
+ 8de:	8e eb       	ldi	r24, 0xBE	; 190
+ 8e0:	90 e0       	ldi	r25, 0x00	; 0
+ 8e2:	c4 dc       	rcall	.-1656   	; 0x26c <lcd_string>
+ 8e4:	29 c0       	rjmp	.+82     	; 0x938 <IC_7404+0xec>
+		else
+		{
+				lcd_string("Gate ");
+				if(g1 == 1)
+				lcd_string("1");
+				if(g2 == 1)
+ 8e6:	c1 30       	cpi	r28, 0x01	; 1
+ 8e8:	19 f4       	brne	.+6      	; 0x8f0 <IC_7404+0xa4>
+				lcd_string("2");
+ 8ea:	8b ec       	ldi	r24, 0xCB	; 203
+ 8ec:	90 e0       	ldi	r25, 0x00	; 0
+ 8ee:	be dc       	rcall	.-1668   	; 0x26c <lcd_string>
+				if(g3 == 1)
+ 8f0:	d1 30       	cpi	r29, 0x01	; 1
+ 8f2:	19 f4       	brne	.+6      	; 0x8fa <IC_7404+0xae>
+				lcd_string("3");
+ 8f4:	8d ec       	ldi	r24, 0xCD	; 205
+ 8f6:	90 e0       	ldi	r25, 0x00	; 0
+ 8f8:	b9 dc       	rcall	.-1678   	; 0x26c <lcd_string>
+				if(g4 == 1)
+ 8fa:	11 30       	cpi	r17, 0x01	; 1
+ 8fc:	19 f4       	brne	.+6      	; 0x904 <IC_7404+0xb8>
+				lcd_string("4");
+ 8fe:	8f ec       	ldi	r24, 0xCF	; 207
+ 900:	90 e0       	ldi	r25, 0x00	; 0
+ 902:	b4 dc       	rcall	.-1688   	; 0x26c <lcd_string>
+				if(g5 == 1)
+ 904:	01 30       	cpi	r16, 0x01	; 1
+ 906:	19 f4       	brne	.+6      	; 0x90e <IC_7404+0xc2>
+				lcd_string("5");
+ 908:	81 ed       	ldi	r24, 0xD1	; 209
+ 90a:	90 e0       	ldi	r25, 0x00	; 0
+ 90c:	af dc       	rcall	.-1698   	; 0x26c <lcd_string>
+				if(g6 == 1)
+ 90e:	81 e0       	ldi	r24, 0x01	; 1
+ 910:	f8 12       	cpse	r15, r24
+ 912:	03 c0       	rjmp	.+6      	; 0x91a <IC_7404+0xce>
+				lcd_string("6");
+ 914:	83 ed       	ldi	r24, 0xD3	; 211
+ 916:	90 e0       	ldi	r25, 0x00	; 0
+ 918:	a9 dc       	rcall	.-1710   	; 0x26c <lcd_string>
+				lcd_string(" OK");
+ 91a:	87 ec       	ldi	r24, 0xC7	; 199
+ 91c:	90 e0       	ldi	r25, 0x00	; 0
+ 91e:	a6 dc       	rcall	.-1716   	; 0x26c <lcd_string>
+ 920:	0b c0       	rjmp	.+22     	; 0x938 <IC_7404+0xec>
+		
+		if(g1 == 1 && g2 == 1 && g3 == 1 && g4 == 1 && g5 == 1 && g6 == 1)
+			lcd_string("All Gates OK");
+		else
+		{
+				lcd_string("Gate ");
+ 922:	85 ed       	ldi	r24, 0xD5	; 213
+ 924:	90 e0       	ldi	r25, 0x00	; 0
+ 926:	a2 dc       	rcall	.-1724   	; 0x26c <lcd_string>
+				if(g1 == 1)
+				lcd_string("1");
+ 928:	8b ed       	ldi	r24, 0xDB	; 219
+ 92a:	90 e0       	ldi	r25, 0x00	; 0
+ 92c:	9f dc       	rcall	.-1730   	; 0x26c <lcd_string>
+ 92e:	db cf       	rjmp	.-74     	; 0x8e6 <IC_7404+0x9a>
+		
+		if(g1 == 1 && g2 == 1 && g3 == 1 && g4 == 1 && g5 == 1 && g6 == 1)
+			lcd_string("All Gates OK");
+		else
+		{
+				lcd_string("Gate ");
+ 930:	85 ed       	ldi	r24, 0xD5	; 213
+ 932:	90 e0       	ldi	r25, 0x00	; 0
+ 934:	9b dc       	rcall	.-1738   	; 0x26c <lcd_string>
+ 936:	d7 cf       	rjmp	.-82     	; 0x8e6 <IC_7404+0x9a>
+				lcd_string("6");
+				lcd_string(" OK");
+		}
+		
+	
+}
+ 938:	df 91       	pop	r29
+ 93a:	cf 91       	pop	r28
+ 93c:	1f 91       	pop	r17
+ 93e:	0f 91       	pop	r16
+ 940:	ff 90       	pop	r15
+ 942:	ef 90       	pop	r14
+ 944:	08 95       	ret
+
+00000946 <IC_Result>:
+	g4 = 1;
+	IC_Result(g1,g2,g3,g4);
+}
+
+void IC_Result(uint8_t g1,uint8_t g2,uint8_t g3,uint8_t g4)
+{
+ 946:	1f 93       	push	r17
+ 948:	cf 93       	push	r28
+ 94a:	df 93       	push	r29
+ 94c:	c6 2f       	mov	r28, r22
+ 94e:	d4 2f       	mov	r29, r20
+ 950:	12 2f       	mov	r17, r18
+
+	if(g1 == 1 && g2 == 1 && g3 == 1 && g4 == 1)
+ 952:	81 30       	cpi	r24, 0x01	; 1
+ 954:	59 f5       	brne	.+86     	; 0x9ac <IC_Result+0x66>
+ 956:	61 30       	cpi	r22, 0x01	; 1
+ 958:	81 f5       	brne	.+96     	; 0x9ba <IC_Result+0x74>
+ 95a:	41 30       	cpi	r20, 0x01	; 1
+ 95c:	71 f5       	brne	.+92     	; 0x9ba <IC_Result+0x74>
+ 95e:	21 30       	cpi	r18, 0x01	; 1
+ 960:	61 f5       	brne	.+88     	; 0x9ba <IC_Result+0x74>
+		lcd_string("All Gates OK");
+ 962:	8e eb       	ldi	r24, 0xBE	; 190
+ 964:	90 e0       	ldi	r25, 0x00	; 0
+ 966:	82 dc       	rcall	.-1788   	; 0x26c <lcd_string>
+ 968:	2f c0       	rjmp	.+94     	; 0x9c8 <IC_Result+0x82>
+	else if(g1 == 0 && g2 == 0 && g3 == 0 && g4 == 0)
+ 96a:	c1 11       	cpse	r28, r1
+ 96c:	22 c0       	rjmp	.+68     	; 0x9b2 <IC_Result+0x6c>
+ 96e:	d1 11       	cpse	r29, r1
+ 970:	20 c0       	rjmp	.+64     	; 0x9b2 <IC_Result+0x6c>
+ 972:	11 11       	cpse	r17, r1
+ 974:	1e c0       	rjmp	.+60     	; 0x9b2 <IC_Result+0x6c>
+		lcd_string("Wrong IC");
+ 976:	8d ed       	ldi	r24, 0xDD	; 221
+ 978:	90 e0       	ldi	r25, 0x00	; 0
+ 97a:	78 dc       	rcall	.-1808   	; 0x26c <lcd_string>
+ 97c:	25 c0       	rjmp	.+74     	; 0x9c8 <IC_Result+0x82>
+	else
+	{
+		lcd_string("Gate ");
+		if(g1 == 1)
+		lcd_string("1");
+		if(g2 == 1)
+ 97e:	c1 30       	cpi	r28, 0x01	; 1
+ 980:	19 f4       	brne	.+6      	; 0x988 <IC_Result+0x42>
+		lcd_string("2");
+ 982:	8b ec       	ldi	r24, 0xCB	; 203
+ 984:	90 e0       	ldi	r25, 0x00	; 0
+ 986:	72 dc       	rcall	.-1820   	; 0x26c <lcd_string>
+		if(g3 == 1)
+ 988:	d1 30       	cpi	r29, 0x01	; 1
+ 98a:	19 f4       	brne	.+6      	; 0x992 <IC_Result+0x4c>
+		lcd_string("3");
+ 98c:	8d ec       	ldi	r24, 0xCD	; 205
+ 98e:	90 e0       	ldi	r25, 0x00	; 0
+ 990:	6d dc       	rcall	.-1830   	; 0x26c <lcd_string>
+		if(g4 == 1)
+ 992:	11 30       	cpi	r17, 0x01	; 1
+ 994:	19 f4       	brne	.+6      	; 0x99c <IC_Result+0x56>
+		lcd_string("4");
+ 996:	8f ec       	ldi	r24, 0xCF	; 207
+ 998:	90 e0       	ldi	r25, 0x00	; 0
+ 99a:	68 dc       	rcall	.-1840   	; 0x26c <lcd_string>
+		lcd_string(" OK");
+ 99c:	87 ec       	ldi	r24, 0xC7	; 199
+ 99e:	90 e0       	ldi	r25, 0x00	; 0
+ 9a0:	65 dc       	rcall	.-1846   	; 0x26c <lcd_string>
+ 9a2:	12 c0       	rjmp	.+36     	; 0x9c8 <IC_Result+0x82>
+		lcd_string("All Gates OK");
+	else if(g1 == 0 && g2 == 0 && g3 == 0 && g4 == 0)
+		lcd_string("Wrong IC");
+	else
+	{
+		lcd_string("Gate ");
+ 9a4:	85 ed       	ldi	r24, 0xD5	; 213
+ 9a6:	90 e0       	ldi	r25, 0x00	; 0
+ 9a8:	61 dc       	rcall	.-1854   	; 0x26c <lcd_string>
+ 9aa:	e9 cf       	rjmp	.-46     	; 0x97e <IC_Result+0x38>
+void IC_Result(uint8_t g1,uint8_t g2,uint8_t g3,uint8_t g4)
+{
+
+	if(g1 == 1 && g2 == 1 && g3 == 1 && g4 == 1)
+		lcd_string("All Gates OK");
+	else if(g1 == 0 && g2 == 0 && g3 == 0 && g4 == 0)
+ 9ac:	88 23       	and	r24, r24
+ 9ae:	e9 f2       	breq	.-70     	; 0x96a <IC_Result+0x24>
+ 9b0:	f9 cf       	rjmp	.-14     	; 0x9a4 <IC_Result+0x5e>
+		lcd_string("Wrong IC");
+	else
+	{
+		lcd_string("Gate ");
+ 9b2:	85 ed       	ldi	r24, 0xD5	; 213
+ 9b4:	90 e0       	ldi	r25, 0x00	; 0
+ 9b6:	5a dc       	rcall	.-1868   	; 0x26c <lcd_string>
+ 9b8:	e2 cf       	rjmp	.-60     	; 0x97e <IC_Result+0x38>
+ 9ba:	85 ed       	ldi	r24, 0xD5	; 213
+ 9bc:	90 e0       	ldi	r25, 0x00	; 0
+ 9be:	56 dc       	rcall	.-1876   	; 0x26c <lcd_string>
+		if(g1 == 1)
+		lcd_string("1");
+ 9c0:	8b ed       	ldi	r24, 0xDB	; 219
+ 9c2:	90 e0       	ldi	r25, 0x00	; 0
+ 9c4:	53 dc       	rcall	.-1882   	; 0x26c <lcd_string>
+ 9c6:	db cf       	rjmp	.-74     	; 0x97e <IC_Result+0x38>
+		lcd_string("3");
+		if(g4 == 1)
+		lcd_string("4");
+		lcd_string(" OK");
+	}	
+}
+ 9c8:	df 91       	pop	r29
+ 9ca:	cf 91       	pop	r28
+ 9cc:	1f 91       	pop	r17
+ 9ce:	08 95       	ret
+
+000009d0 <IC_7408>:
+	
+	return ticks;
+}
+
+void IC_7408()
+{
+ 9d0:	0f 93       	push	r16
+ 9d2:	1f 93       	push	r17
+ 9d4:	cf 93       	push	r28
+ 9d6:	df 93       	push	r29
+	uint8_t g1=0,g2=0,g3=0,g4=0; //1 means gates are working fine and 0 means not fine	
+	lcd_string("IC 7408 AND");
+ 9d8:	86 ee       	ldi	r24, 0xE6	; 230
+ 9da:	90 e0       	ldi	r25, 0x00	; 0
+ 9dc:	47 dc       	rcall	.-1906   	; 0x26c <lcd_string>
+	lcd_cursor(2,2);
+ 9de:	62 e0       	ldi	r22, 0x02	; 2
+ 9e0:	82 e0       	ldi	r24, 0x02	; 2
+ 9e2:	52 dc       	rcall	.-1884   	; 0x288 <lcd_cursor>
+	//send output from controller as inputs to ic
+	Init_Type1();
+ 9e4:	ce dc       	rcall	.-1636   	; 0x382 <Init_Type1>
+	
+	if(Check_gate_type1(0,0,0,1,1) == 4)
+ 9e6:	01 e0       	ldi	r16, 0x01	; 1
+ 9e8:	21 e0       	ldi	r18, 0x01	; 1
+ 9ea:	40 e0       	ldi	r20, 0x00	; 0
+ 9ec:	60 e0       	ldi	r22, 0x00	; 0
+ 9ee:	80 e0       	ldi	r24, 0x00	; 0
+ 9f0:	4b de       	rcall	.-874    	; 0x688 <Check_gate_type1>
+ 9f2:	c8 2f       	mov	r28, r24
+	g1 = 1;
+	if(Check_gate_type1(0,0,0,1,2) == 4)
+ 9f4:	02 e0       	ldi	r16, 0x02	; 2
+ 9f6:	21 e0       	ldi	r18, 0x01	; 1
+ 9f8:	40 e0       	ldi	r20, 0x00	; 0
+ 9fa:	60 e0       	ldi	r22, 0x00	; 0
+ 9fc:	80 e0       	ldi	r24, 0x00	; 0
+ 9fe:	44 de       	rcall	.-888    	; 0x688 <Check_gate_type1>
+ a00:	d8 2f       	mov	r29, r24
+	g2 = 1;
+	if(Check_gate_type1(0,0,0,1,3) == 4)
+ a02:	03 e0       	ldi	r16, 0x03	; 3
+ a04:	21 e0       	ldi	r18, 0x01	; 1
+ a06:	40 e0       	ldi	r20, 0x00	; 0
+ a08:	60 e0       	ldi	r22, 0x00	; 0
+ a0a:	80 e0       	ldi	r24, 0x00	; 0
+ a0c:	3d de       	rcall	.-902    	; 0x688 <Check_gate_type1>
+ a0e:	18 2f       	mov	r17, r24
+	g3 = 1;
+	if(Check_gate_type1(0,0,0,1,4) == 4)
+ a10:	04 e0       	ldi	r16, 0x04	; 4
+ a12:	21 e0       	ldi	r18, 0x01	; 1
+ a14:	40 e0       	ldi	r20, 0x00	; 0
+ a16:	60 e0       	ldi	r22, 0x00	; 0
+ a18:	80 e0       	ldi	r24, 0x00	; 0
+ a1a:	36 de       	rcall	.-916    	; 0x688 <Check_gate_type1>
+ a1c:	21 e0       	ldi	r18, 0x01	; 1
+ a1e:	84 30       	cpi	r24, 0x04	; 4
+ a20:	09 f0       	breq	.+2      	; 0xa24 <IC_7408+0x54>
+ a22:	20 e0       	ldi	r18, 0x00	; 0
+	
+	if(Check_gate_type1(0,0,0,1,1) == 4)
+	g1 = 1;
+	if(Check_gate_type1(0,0,0,1,2) == 4)
+	g2 = 1;
+	if(Check_gate_type1(0,0,0,1,3) == 4)
+ a24:	41 e0       	ldi	r20, 0x01	; 1
+ a26:	14 30       	cpi	r17, 0x04	; 4
+ a28:	09 f0       	breq	.+2      	; 0xa2c <IC_7408+0x5c>
+ a2a:	40 e0       	ldi	r20, 0x00	; 0
+	//send output from controller as inputs to ic
+	Init_Type1();
+	
+	if(Check_gate_type1(0,0,0,1,1) == 4)
+	g1 = 1;
+	if(Check_gate_type1(0,0,0,1,2) == 4)
+ a2c:	61 e0       	ldi	r22, 0x01	; 1
+ a2e:	d4 30       	cpi	r29, 0x04	; 4
+ a30:	09 f0       	breq	.+2      	; 0xa34 <IC_7408+0x64>
+ a32:	60 e0       	ldi	r22, 0x00	; 0
+	lcd_string("IC 7408 AND");
+	lcd_cursor(2,2);
+	//send output from controller as inputs to ic
+	Init_Type1();
+	
+	if(Check_gate_type1(0,0,0,1,1) == 4)
+ a34:	81 e0       	ldi	r24, 0x01	; 1
+ a36:	c4 30       	cpi	r28, 0x04	; 4
+ a38:	09 f0       	breq	.+2      	; 0xa3c <IC_7408+0x6c>
+ a3a:	80 e0       	ldi	r24, 0x00	; 0
+	g2 = 1;
+	if(Check_gate_type1(0,0,0,1,3) == 4)
+	g3 = 1;
+	if(Check_gate_type1(0,0,0,1,4) == 4)
+	g4 = 1;
+	IC_Result(g1,g2,g3,g4);
+ a3c:	84 df       	rcall	.-248    	; 0x946 <IC_Result>
+	
+}
+ a3e:	df 91       	pop	r29
+ a40:	cf 91       	pop	r28
+ a42:	1f 91       	pop	r17
+ a44:	0f 91       	pop	r16
+ a46:	08 95       	ret
+
+00000a48 <IC_7432>:
+void IC_7432()
+{
+ a48:	0f 93       	push	r16
+ a4a:	1f 93       	push	r17
+ a4c:	cf 93       	push	r28
+ a4e:	df 93       	push	r29
+	uint8_t g1=0,g2=0,g3=0,g4=0; //1 means gates are working fine and 0 means not fine
+		
+		lcd_string("IC 7432 OR");
+ a50:	82 ef       	ldi	r24, 0xF2	; 242
+ a52:	90 e0       	ldi	r25, 0x00	; 0
+ a54:	0b dc       	rcall	.-2026   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ a56:	62 e0       	ldi	r22, 0x02	; 2
+ a58:	82 e0       	ldi	r24, 0x02	; 2
+ a5a:	16 dc       	rcall	.-2004   	; 0x288 <lcd_cursor>
+		//send output from controller as inputs to ic
+		Init_Type1();
+ a5c:	92 dc       	rcall	.-1756   	; 0x382 <Init_Type1>
+		
+		if(Check_gate_type1(0,1,1,1,1) == 4)
+ a5e:	01 e0       	ldi	r16, 0x01	; 1
+ a60:	21 e0       	ldi	r18, 0x01	; 1
+ a62:	41 e0       	ldi	r20, 0x01	; 1
+ a64:	61 e0       	ldi	r22, 0x01	; 1
+ a66:	80 e0       	ldi	r24, 0x00	; 0
+ a68:	0f de       	rcall	.-994    	; 0x688 <Check_gate_type1>
+ a6a:	c8 2f       	mov	r28, r24
+			g1 = 1;
+		if(Check_gate_type1(0,1,1,1,2) == 4)
+ a6c:	02 e0       	ldi	r16, 0x02	; 2
+ a6e:	21 e0       	ldi	r18, 0x01	; 1
+ a70:	41 e0       	ldi	r20, 0x01	; 1
+ a72:	61 e0       	ldi	r22, 0x01	; 1
+ a74:	80 e0       	ldi	r24, 0x00	; 0
+ a76:	08 de       	rcall	.-1008   	; 0x688 <Check_gate_type1>
+ a78:	d8 2f       	mov	r29, r24
+			g2 = 1;
+		if(Check_gate_type1(0,1,1,1,3) == 4)
+ a7a:	03 e0       	ldi	r16, 0x03	; 3
+ a7c:	21 e0       	ldi	r18, 0x01	; 1
+ a7e:	41 e0       	ldi	r20, 0x01	; 1
+ a80:	61 e0       	ldi	r22, 0x01	; 1
+ a82:	80 e0       	ldi	r24, 0x00	; 0
+ a84:	01 de       	rcall	.-1022   	; 0x688 <Check_gate_type1>
+ a86:	18 2f       	mov	r17, r24
+			g3 = 1;
+		if(Check_gate_type1(0,1,1,1,4) == 4)
+ a88:	04 e0       	ldi	r16, 0x04	; 4
+ a8a:	21 e0       	ldi	r18, 0x01	; 1
+ a8c:	41 e0       	ldi	r20, 0x01	; 1
+ a8e:	61 e0       	ldi	r22, 0x01	; 1
+ a90:	80 e0       	ldi	r24, 0x00	; 0
+ a92:	fa dd       	rcall	.-1036   	; 0x688 <Check_gate_type1>
+ a94:	21 e0       	ldi	r18, 0x01	; 1
+ a96:	84 30       	cpi	r24, 0x04	; 4
+ a98:	09 f0       	breq	.+2      	; 0xa9c <IC_7432+0x54>
+ a9a:	20 e0       	ldi	r18, 0x00	; 0
+		
+		if(Check_gate_type1(0,1,1,1,1) == 4)
+			g1 = 1;
+		if(Check_gate_type1(0,1,1,1,2) == 4)
+			g2 = 1;
+		if(Check_gate_type1(0,1,1,1,3) == 4)
+ a9c:	41 e0       	ldi	r20, 0x01	; 1
+ a9e:	14 30       	cpi	r17, 0x04	; 4
+ aa0:	09 f0       	breq	.+2      	; 0xaa4 <IC_7432+0x5c>
+ aa2:	40 e0       	ldi	r20, 0x00	; 0
+		//send output from controller as inputs to ic
+		Init_Type1();
+		
+		if(Check_gate_type1(0,1,1,1,1) == 4)
+			g1 = 1;
+		if(Check_gate_type1(0,1,1,1,2) == 4)
+ aa4:	61 e0       	ldi	r22, 0x01	; 1
+ aa6:	d4 30       	cpi	r29, 0x04	; 4
+ aa8:	09 f0       	breq	.+2      	; 0xaac <IC_7432+0x64>
+ aaa:	60 e0       	ldi	r22, 0x00	; 0
+		lcd_string("IC 7432 OR");
+		lcd_cursor(2,2);
+		//send output from controller as inputs to ic
+		Init_Type1();
+		
+		if(Check_gate_type1(0,1,1,1,1) == 4)
+ aac:	81 e0       	ldi	r24, 0x01	; 1
+ aae:	c4 30       	cpi	r28, 0x04	; 4
+ ab0:	09 f0       	breq	.+2      	; 0xab4 <IC_7432+0x6c>
+ ab2:	80 e0       	ldi	r24, 0x00	; 0
+			g2 = 1;
+		if(Check_gate_type1(0,1,1,1,3) == 4)
+			g3 = 1;
+		if(Check_gate_type1(0,1,1,1,4) == 4)
+			g4 = 1;
+		IC_Result(g1,g2,g3,g4);
+ ab4:	48 df       	rcall	.-368    	; 0x946 <IC_Result>
+	
+}
+ ab6:	df 91       	pop	r29
+ ab8:	cf 91       	pop	r28
+ aba:	1f 91       	pop	r17
+ abc:	0f 91       	pop	r16
+ abe:	08 95       	ret
+
+00000ac0 <IC_7486>:
+void IC_7486()
+{
+ ac0:	0f 93       	push	r16
+ ac2:	1f 93       	push	r17
+ ac4:	cf 93       	push	r28
+ ac6:	df 93       	push	r29
+	uint8_t g1=0,g2=0,g3=0,g4=0; //1 means gates are working fine and 0 means not fine
+		
+		//send output from controller as inputs to ic
+		Init_Type1();
+ ac8:	5c dc       	rcall	.-1864   	; 0x382 <Init_Type1>
+		lcd_string("IC 7486 XOR");
+ aca:	8d ef       	ldi	r24, 0xFD	; 253
+ acc:	90 e0       	ldi	r25, 0x00	; 0
+ ace:	ce db       	rcall	.-2148   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ ad0:	62 e0       	ldi	r22, 0x02	; 2
+ ad2:	82 e0       	ldi	r24, 0x02	; 2
+ ad4:	d9 db       	rcall	.-2126   	; 0x288 <lcd_cursor>
+		if(Check_gate_type1(0,1,1,0,1) == 4)
+ ad6:	01 e0       	ldi	r16, 0x01	; 1
+ ad8:	20 e0       	ldi	r18, 0x00	; 0
+ ada:	41 e0       	ldi	r20, 0x01	; 1
+ adc:	61 e0       	ldi	r22, 0x01	; 1
+ ade:	80 e0       	ldi	r24, 0x00	; 0
+ ae0:	d3 dd       	rcall	.-1114   	; 0x688 <Check_gate_type1>
+ ae2:	c8 2f       	mov	r28, r24
+			g1 = 1;
+		if(Check_gate_type1(0,1,1,0,2) == 4)
+ ae4:	02 e0       	ldi	r16, 0x02	; 2
+ ae6:	20 e0       	ldi	r18, 0x00	; 0
+ ae8:	41 e0       	ldi	r20, 0x01	; 1
+ aea:	61 e0       	ldi	r22, 0x01	; 1
+ aec:	80 e0       	ldi	r24, 0x00	; 0
+ aee:	cc dd       	rcall	.-1128   	; 0x688 <Check_gate_type1>
+ af0:	d8 2f       	mov	r29, r24
+			g2 = 1;
+		if(Check_gate_type1(0,1,1,0,3) == 4)
+ af2:	03 e0       	ldi	r16, 0x03	; 3
+ af4:	20 e0       	ldi	r18, 0x00	; 0
+ af6:	41 e0       	ldi	r20, 0x01	; 1
+ af8:	61 e0       	ldi	r22, 0x01	; 1
+ afa:	80 e0       	ldi	r24, 0x00	; 0
+ afc:	c5 dd       	rcall	.-1142   	; 0x688 <Check_gate_type1>
+ afe:	18 2f       	mov	r17, r24
+			g3 = 1;
+		if(Check_gate_type1(0,1,1,0,4) == 4)
+ b00:	04 e0       	ldi	r16, 0x04	; 4
+ b02:	20 e0       	ldi	r18, 0x00	; 0
+ b04:	41 e0       	ldi	r20, 0x01	; 1
+ b06:	61 e0       	ldi	r22, 0x01	; 1
+ b08:	80 e0       	ldi	r24, 0x00	; 0
+ b0a:	be dd       	rcall	.-1156   	; 0x688 <Check_gate_type1>
+ b0c:	21 e0       	ldi	r18, 0x01	; 1
+ b0e:	84 30       	cpi	r24, 0x04	; 4
+ b10:	09 f0       	breq	.+2      	; 0xb14 <IC_7486+0x54>
+ b12:	20 e0       	ldi	r18, 0x00	; 0
+		lcd_cursor(2,2);
+		if(Check_gate_type1(0,1,1,0,1) == 4)
+			g1 = 1;
+		if(Check_gate_type1(0,1,1,0,2) == 4)
+			g2 = 1;
+		if(Check_gate_type1(0,1,1,0,3) == 4)
+ b14:	41 e0       	ldi	r20, 0x01	; 1
+ b16:	14 30       	cpi	r17, 0x04	; 4
+ b18:	09 f0       	breq	.+2      	; 0xb1c <IC_7486+0x5c>
+ b1a:	40 e0       	ldi	r20, 0x00	; 0
+		Init_Type1();
+		lcd_string("IC 7486 XOR");
+		lcd_cursor(2,2);
+		if(Check_gate_type1(0,1,1,0,1) == 4)
+			g1 = 1;
+		if(Check_gate_type1(0,1,1,0,2) == 4)
+ b1c:	61 e0       	ldi	r22, 0x01	; 1
+ b1e:	d4 30       	cpi	r29, 0x04	; 4
+ b20:	09 f0       	breq	.+2      	; 0xb24 <IC_7486+0x64>
+ b22:	60 e0       	ldi	r22, 0x00	; 0
+		
+		//send output from controller as inputs to ic
+		Init_Type1();
+		lcd_string("IC 7486 XOR");
+		lcd_cursor(2,2);
+		if(Check_gate_type1(0,1,1,0,1) == 4)
+ b24:	81 e0       	ldi	r24, 0x01	; 1
+ b26:	c4 30       	cpi	r28, 0x04	; 4
+ b28:	09 f0       	breq	.+2      	; 0xb2c <IC_7486+0x6c>
+ b2a:	80 e0       	ldi	r24, 0x00	; 0
+			g2 = 1;
+		if(Check_gate_type1(0,1,1,0,3) == 4)
+			g3 = 1;
+		if(Check_gate_type1(0,1,1,0,4) == 4)
+			g4 = 1;
+		IC_Result(g1,g2,g3,g4);
+ b2c:	0c df       	rcall	.-488    	; 0x946 <IC_Result>
+}
+ b2e:	df 91       	pop	r29
+ b30:	cf 91       	pop	r28
+ b32:	1f 91       	pop	r17
+ b34:	0f 91       	pop	r16
+ b36:	08 95       	ret
+
+00000b38 <IC_7400>:
+void IC_7400()
+{
+ b38:	0f 93       	push	r16
+ b3a:	1f 93       	push	r17
+ b3c:	cf 93       	push	r28
+ b3e:	df 93       	push	r29
+	uint8_t g1=0,g2=0,g3=0,g4=0; //1 means gates are working fine and 0 means not fine
+		//send output from controller as inputs to ic
+		Init_Type1();
+ b40:	20 dc       	rcall	.-1984   	; 0x382 <Init_Type1>
+		lcd_string("IC 7400 NAND");
+ b42:	89 e0       	ldi	r24, 0x09	; 9
+ b44:	91 e0       	ldi	r25, 0x01	; 1
+ b46:	92 db       	rcall	.-2268   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ b48:	62 e0       	ldi	r22, 0x02	; 2
+ b4a:	82 e0       	ldi	r24, 0x02	; 2
+ b4c:	9d db       	rcall	.-2246   	; 0x288 <lcd_cursor>
+		if(Check_gate_type1(1,1,1,0,1) == 4)
+ b4e:	01 e0       	ldi	r16, 0x01	; 1
+ b50:	20 e0       	ldi	r18, 0x00	; 0
+ b52:	41 e0       	ldi	r20, 0x01	; 1
+ b54:	61 e0       	ldi	r22, 0x01	; 1
+ b56:	81 e0       	ldi	r24, 0x01	; 1
+ b58:	97 dd       	rcall	.-1234   	; 0x688 <Check_gate_type1>
+ b5a:	c8 2f       	mov	r28, r24
+			g1 = 1;
+		if(Check_gate_type1(1,1,1,0,2) == 4)
+ b5c:	02 e0       	ldi	r16, 0x02	; 2
+ b5e:	20 e0       	ldi	r18, 0x00	; 0
+ b60:	41 e0       	ldi	r20, 0x01	; 1
+ b62:	61 e0       	ldi	r22, 0x01	; 1
+ b64:	81 e0       	ldi	r24, 0x01	; 1
+ b66:	90 dd       	rcall	.-1248   	; 0x688 <Check_gate_type1>
+ b68:	d8 2f       	mov	r29, r24
+			g2 = 1;
+		if(Check_gate_type1(1,1,1,0,3) == 4)
+ b6a:	03 e0       	ldi	r16, 0x03	; 3
+ b6c:	20 e0       	ldi	r18, 0x00	; 0
+ b6e:	41 e0       	ldi	r20, 0x01	; 1
+ b70:	61 e0       	ldi	r22, 0x01	; 1
+ b72:	81 e0       	ldi	r24, 0x01	; 1
+ b74:	89 dd       	rcall	.-1262   	; 0x688 <Check_gate_type1>
+ b76:	18 2f       	mov	r17, r24
+			g3 = 1;
+		if(Check_gate_type1(1,1,1,0,4) == 4)
+ b78:	04 e0       	ldi	r16, 0x04	; 4
+ b7a:	20 e0       	ldi	r18, 0x00	; 0
+ b7c:	41 e0       	ldi	r20, 0x01	; 1
+ b7e:	61 e0       	ldi	r22, 0x01	; 1
+ b80:	81 e0       	ldi	r24, 0x01	; 1
+ b82:	82 dd       	rcall	.-1276   	; 0x688 <Check_gate_type1>
+ b84:	21 e0       	ldi	r18, 0x01	; 1
+ b86:	84 30       	cpi	r24, 0x04	; 4
+ b88:	09 f0       	breq	.+2      	; 0xb8c <IC_7400+0x54>
+ b8a:	20 e0       	ldi	r18, 0x00	; 0
+		lcd_cursor(2,2);
+		if(Check_gate_type1(1,1,1,0,1) == 4)
+			g1 = 1;
+		if(Check_gate_type1(1,1,1,0,2) == 4)
+			g2 = 1;
+		if(Check_gate_type1(1,1,1,0,3) == 4)
+ b8c:	41 e0       	ldi	r20, 0x01	; 1
+ b8e:	14 30       	cpi	r17, 0x04	; 4
+ b90:	09 f0       	breq	.+2      	; 0xb94 <IC_7400+0x5c>
+ b92:	40 e0       	ldi	r20, 0x00	; 0
+		Init_Type1();
+		lcd_string("IC 7400 NAND");
+		lcd_cursor(2,2);
+		if(Check_gate_type1(1,1,1,0,1) == 4)
+			g1 = 1;
+		if(Check_gate_type1(1,1,1,0,2) == 4)
+ b94:	61 e0       	ldi	r22, 0x01	; 1
+ b96:	d4 30       	cpi	r29, 0x04	; 4
+ b98:	09 f0       	breq	.+2      	; 0xb9c <IC_7400+0x64>
+ b9a:	60 e0       	ldi	r22, 0x00	; 0
+	uint8_t g1=0,g2=0,g3=0,g4=0; //1 means gates are working fine and 0 means not fine
+		//send output from controller as inputs to ic
+		Init_Type1();
+		lcd_string("IC 7400 NAND");
+		lcd_cursor(2,2);
+		if(Check_gate_type1(1,1,1,0,1) == 4)
+ b9c:	81 e0       	ldi	r24, 0x01	; 1
+ b9e:	c4 30       	cpi	r28, 0x04	; 4
+ ba0:	09 f0       	breq	.+2      	; 0xba4 <IC_7400+0x6c>
+ ba2:	80 e0       	ldi	r24, 0x00	; 0
+			g2 = 1;
+		if(Check_gate_type1(1,1,1,0,3) == 4)
+			g3 = 1;
+		if(Check_gate_type1(1,1,1,0,4) == 4)
+			g4 = 1;
+		IC_Result(g1,g2,g3,g4);
+ ba4:	d0 de       	rcall	.-608    	; 0x946 <IC_Result>
+}
+ ba6:	df 91       	pop	r29
+ ba8:	cf 91       	pop	r28
+ baa:	1f 91       	pop	r17
+ bac:	0f 91       	pop	r16
+ bae:	08 95       	ret
+
+00000bb0 <IC_7402>:
+		}
+		
+	
+}
+void IC_7402()
+{
+ bb0:	0f 93       	push	r16
+ bb2:	1f 93       	push	r17
+ bb4:	cf 93       	push	r28
+ bb6:	df 93       	push	r29
+	uint8_t g1=0,g2=0,g3=0,g4=0; //1 means gates are working fine and 0 means not fine
+	//send output from controller as inputs to ic
+	Init_Type2();
+ bb8:	f5 db       	rcall	.-2070   	; 0x3a4 <Init_Type2>
+	lcd_string("IC 7402 NOR");
+ bba:	86 e1       	ldi	r24, 0x16	; 22
+ bbc:	91 e0       	ldi	r25, 0x01	; 1
+ bbe:	56 db       	rcall	.-2388   	; 0x26c <lcd_string>
+	lcd_cursor(2,2);
+ bc0:	62 e0       	ldi	r22, 0x02	; 2
+ bc2:	82 e0       	ldi	r24, 0x02	; 2
+ bc4:	61 db       	rcall	.-2366   	; 0x288 <lcd_cursor>
+	if(Check_gate_type2(1,0,0,0,1) == 4)
+ bc6:	01 e0       	ldi	r16, 0x01	; 1
+ bc8:	20 e0       	ldi	r18, 0x00	; 0
+ bca:	40 e0       	ldi	r20, 0x00	; 0
+ bcc:	60 e0       	ldi	r22, 0x00	; 0
+ bce:	81 e0       	ldi	r24, 0x01	; 1
+ bd0:	b3 dd       	rcall	.-1178   	; 0x738 <Check_gate_type2>
+ bd2:	c8 2f       	mov	r28, r24
+	g1 = 1;
+	if(Check_gate_type2(1,0,0,0,2) == 4)
+ bd4:	02 e0       	ldi	r16, 0x02	; 2
+ bd6:	20 e0       	ldi	r18, 0x00	; 0
+ bd8:	40 e0       	ldi	r20, 0x00	; 0
+ bda:	60 e0       	ldi	r22, 0x00	; 0
+ bdc:	81 e0       	ldi	r24, 0x01	; 1
+ bde:	ac dd       	rcall	.-1192   	; 0x738 <Check_gate_type2>
+ be0:	d8 2f       	mov	r29, r24
+	g2 = 1;
+	if(Check_gate_type2(1,0,0,0,3) == 4)
+ be2:	03 e0       	ldi	r16, 0x03	; 3
+ be4:	20 e0       	ldi	r18, 0x00	; 0
+ be6:	40 e0       	ldi	r20, 0x00	; 0
+ be8:	60 e0       	ldi	r22, 0x00	; 0
+ bea:	81 e0       	ldi	r24, 0x01	; 1
+ bec:	a5 dd       	rcall	.-1206   	; 0x738 <Check_gate_type2>
+ bee:	18 2f       	mov	r17, r24
+	g3 = 1;
+	if(Check_gate_type2(1,0,0,0,4) == 4)
+ bf0:	04 e0       	ldi	r16, 0x04	; 4
+ bf2:	20 e0       	ldi	r18, 0x00	; 0
+ bf4:	40 e0       	ldi	r20, 0x00	; 0
+ bf6:	60 e0       	ldi	r22, 0x00	; 0
+ bf8:	81 e0       	ldi	r24, 0x01	; 1
+ bfa:	9e dd       	rcall	.-1220   	; 0x738 <Check_gate_type2>
+ bfc:	21 e0       	ldi	r18, 0x01	; 1
+ bfe:	84 30       	cpi	r24, 0x04	; 4
+ c00:	09 f0       	breq	.+2      	; 0xc04 <IC_7402+0x54>
+ c02:	20 e0       	ldi	r18, 0x00	; 0
+	lcd_cursor(2,2);
+	if(Check_gate_type2(1,0,0,0,1) == 4)
+	g1 = 1;
+	if(Check_gate_type2(1,0,0,0,2) == 4)
+	g2 = 1;
+	if(Check_gate_type2(1,0,0,0,3) == 4)
+ c04:	41 e0       	ldi	r20, 0x01	; 1
+ c06:	14 30       	cpi	r17, 0x04	; 4
+ c08:	09 f0       	breq	.+2      	; 0xc0c <IC_7402+0x5c>
+ c0a:	40 e0       	ldi	r20, 0x00	; 0
+	Init_Type2();
+	lcd_string("IC 7402 NOR");
+	lcd_cursor(2,2);
+	if(Check_gate_type2(1,0,0,0,1) == 4)
+	g1 = 1;
+	if(Check_gate_type2(1,0,0,0,2) == 4)
+ c0c:	61 e0       	ldi	r22, 0x01	; 1
+ c0e:	d4 30       	cpi	r29, 0x04	; 4
+ c10:	09 f0       	breq	.+2      	; 0xc14 <IC_7402+0x64>
+ c12:	60 e0       	ldi	r22, 0x00	; 0
+	uint8_t g1=0,g2=0,g3=0,g4=0; //1 means gates are working fine and 0 means not fine
+	//send output from controller as inputs to ic
+	Init_Type2();
+	lcd_string("IC 7402 NOR");
+	lcd_cursor(2,2);
+	if(Check_gate_type2(1,0,0,0,1) == 4)
+ c14:	81 e0       	ldi	r24, 0x01	; 1
+ c16:	c4 30       	cpi	r28, 0x04	; 4
+ c18:	09 f0       	breq	.+2      	; 0xc1c <IC_7402+0x6c>
+ c1a:	80 e0       	ldi	r24, 0x00	; 0
+	g2 = 1;
+	if(Check_gate_type2(1,0,0,0,3) == 4)
+	g3 = 1;
+	if(Check_gate_type2(1,0,0,0,4) == 4)
+	g4 = 1;
+	IC_Result(g1,g2,g3,g4);
+ c1c:	94 de       	rcall	.-728    	; 0x946 <IC_Result>
+}
+ c1e:	df 91       	pop	r29
+ c20:	cf 91       	pop	r28
+ c22:	1f 91       	pop	r17
+ c24:	0f 91       	pop	r16
+ c26:	08 95       	ret
+
+00000c28 <result1>:
+		lcd_string(" OK");
+	}	
+}
+void result1()
+{
+	lcd_clear();
+ c28:	1b db       	rcall	.-2506   	; 0x260 <lcd_clear>
+	lcd_cursor(1,2);
+ c2a:	62 e0       	ldi	r22, 0x02	; 2
+ c2c:	81 e0       	ldi	r24, 0x01	; 1
+ c2e:	2c db       	rcall	.-2472   	; 0x288 <lcd_cursor>
+	lcd_string("Gt 1:1,2-I/P");
+ c30:	82 e2       	ldi	r24, 0x22	; 34
+ c32:	91 e0       	ldi	r25, 0x01	; 1
+ c34:	1b db       	rcall	.-2506   	; 0x26c <lcd_string>
+	lcd_cursor(2,2);
+ c36:	62 e0       	ldi	r22, 0x02	; 2
+ c38:	82 e0       	ldi	r24, 0x02	; 2
+ c3a:	26 db       	rcall	.-2484   	; 0x288 <lcd_cursor>
+	lcd_string("       3-O/P");
+ c3c:	8f e2       	ldi	r24, 0x2F	; 47
+ c3e:	91 e0       	ldi	r25, 0x01	; 1
+ c40:	15 db       	rcall	.-2518   	; 0x26c <lcd_string>
+ c42:	08 95       	ret
+
+00000c44 <findIC>:
+}
+void findIC()
+{
+ c44:	0f 93       	push	r16
+	Init_Type1();
+ c46:	9d db       	rcall	.-2246   	; 0x382 <Init_Type1>
+	if(Check_gate_type1(0,0,0,1,1) == 4)
+ c48:	01 e0       	ldi	r16, 0x01	; 1
+ c4a:	21 e0       	ldi	r18, 0x01	; 1
+ c4c:	40 e0       	ldi	r20, 0x00	; 0
+ c4e:	60 e0       	ldi	r22, 0x00	; 0
+ c50:	80 e0       	ldi	r24, 0x00	; 0
+ c52:	1a dd       	rcall	.-1484   	; 0x688 <Check_gate_type1>
+ c54:	84 30       	cpi	r24, 0x04	; 4
+ c56:	a1 f4       	brne	.+40     	; 0xc80 <findIC+0x3c>
+	{
+		lcd_string("IC 7408 AND");
+ c58:	86 ee       	ldi	r24, 0xE6	; 230
+ c5a:	90 e0       	ldi	r25, 0x00	; 0
+ c5c:	07 db       	rcall	.-2546   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ c5e:	62 e0       	ldi	r22, 0x02	; 2
+ c60:	82 e0       	ldi	r24, 0x02	; 2
+ c62:	12 db       	rcall	.-2524   	; 0x288 <lcd_cursor>
+		lcd_string("Two I/p And");
+ c64:	8c e3       	ldi	r24, 0x3C	; 60
+ c66:	91 e0       	ldi	r25, 0x01	; 1
+ c68:	01 db       	rcall	.-2558   	; 0x26c <lcd_string>
+ c6a:	2f e3       	ldi	r18, 0x3F	; 63
+ c6c:	82 e4       	ldi	r24, 0x42	; 66
+ c6e:	9f e0       	ldi	r25, 0x0F	; 15
+ c70:	21 50       	subi	r18, 0x01	; 1
+ c72:	80 40       	sbci	r24, 0x00	; 0
+ c74:	90 40       	sbci	r25, 0x00	; 0
+ c76:	e1 f7       	brne	.-8      	; 0xc70 <findIC+0x2c>
+ c78:	00 c0       	rjmp	.+0      	; 0xc7a <findIC+0x36>
+ c7a:	00 00       	nop
+		_delay_ms(5000);
+		result1();
+ c7c:	d5 df       	rcall	.-86     	; 0xc28 <result1>
+ c7e:	70 c0       	rjmp	.+224    	; 0xd60 <findIC+0x11c>
+	}
+	else if(Check_gate_type1(0,1,1,1,1) == 4)
+ c80:	01 e0       	ldi	r16, 0x01	; 1
+ c82:	21 e0       	ldi	r18, 0x01	; 1
+ c84:	41 e0       	ldi	r20, 0x01	; 1
+ c86:	61 e0       	ldi	r22, 0x01	; 1
+ c88:	80 e0       	ldi	r24, 0x00	; 0
+ c8a:	fe dc       	rcall	.-1540   	; 0x688 <Check_gate_type1>
+ c8c:	84 30       	cpi	r24, 0x04	; 4
+ c8e:	a1 f4       	brne	.+40     	; 0xcb8 <findIC+0x74>
+	{
+		lcd_string("IC 7432 OR");
+ c90:	82 ef       	ldi	r24, 0xF2	; 242
+ c92:	90 e0       	ldi	r25, 0x00	; 0
+ c94:	eb da       	rcall	.-2602   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ c96:	62 e0       	ldi	r22, 0x02	; 2
+ c98:	82 e0       	ldi	r24, 0x02	; 2
+ c9a:	f6 da       	rcall	.-2580   	; 0x288 <lcd_cursor>
+		lcd_string("Two I/p OR");
+ c9c:	88 e4       	ldi	r24, 0x48	; 72
+ c9e:	91 e0       	ldi	r25, 0x01	; 1
+ ca0:	e5 da       	rcall	.-2614   	; 0x26c <lcd_string>
+ ca2:	2f e3       	ldi	r18, 0x3F	; 63
+ ca4:	82 e4       	ldi	r24, 0x42	; 66
+ ca6:	9f e0       	ldi	r25, 0x0F	; 15
+ ca8:	21 50       	subi	r18, 0x01	; 1
+ caa:	80 40       	sbci	r24, 0x00	; 0
+ cac:	90 40       	sbci	r25, 0x00	; 0
+ cae:	e1 f7       	brne	.-8      	; 0xca8 <findIC+0x64>
+ cb0:	00 c0       	rjmp	.+0      	; 0xcb2 <findIC+0x6e>
+ cb2:	00 00       	nop
+		_delay_ms(5000);
+		result1();
+ cb4:	b9 df       	rcall	.-142    	; 0xc28 <result1>
+ cb6:	54 c0       	rjmp	.+168    	; 0xd60 <findIC+0x11c>
+	}
+	else if(Check_gate_type1(0,1,1,0,1) == 4)
+ cb8:	01 e0       	ldi	r16, 0x01	; 1
+ cba:	20 e0       	ldi	r18, 0x00	; 0
+ cbc:	41 e0       	ldi	r20, 0x01	; 1
+ cbe:	61 e0       	ldi	r22, 0x01	; 1
+ cc0:	80 e0       	ldi	r24, 0x00	; 0
+ cc2:	e2 dc       	rcall	.-1596   	; 0x688 <Check_gate_type1>
+ cc4:	84 30       	cpi	r24, 0x04	; 4
+ cc6:	a1 f4       	brne	.+40     	; 0xcf0 <findIC+0xac>
+	{
+		lcd_string("IC 7486 XOR");
+ cc8:	8d ef       	ldi	r24, 0xFD	; 253
+ cca:	90 e0       	ldi	r25, 0x00	; 0
+ ccc:	cf da       	rcall	.-2658   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ cce:	62 e0       	ldi	r22, 0x02	; 2
+ cd0:	82 e0       	ldi	r24, 0x02	; 2
+ cd2:	da da       	rcall	.-2636   	; 0x288 <lcd_cursor>
+		lcd_string("Two I/p XOR");
+ cd4:	83 e5       	ldi	r24, 0x53	; 83
+ cd6:	91 e0       	ldi	r25, 0x01	; 1
+ cd8:	c9 da       	rcall	.-2670   	; 0x26c <lcd_string>
+ cda:	2f e3       	ldi	r18, 0x3F	; 63
+ cdc:	82 e4       	ldi	r24, 0x42	; 66
+ cde:	9f e0       	ldi	r25, 0x0F	; 15
+ ce0:	21 50       	subi	r18, 0x01	; 1
+ ce2:	80 40       	sbci	r24, 0x00	; 0
+ ce4:	90 40       	sbci	r25, 0x00	; 0
+ ce6:	e1 f7       	brne	.-8      	; 0xce0 <findIC+0x9c>
+ ce8:	00 c0       	rjmp	.+0      	; 0xcea <findIC+0xa6>
+ cea:	00 00       	nop
+		_delay_ms(5000);
+		result1();
+ cec:	9d df       	rcall	.-198    	; 0xc28 <result1>
+ cee:	38 c0       	rjmp	.+112    	; 0xd60 <findIC+0x11c>
+	}
+	else if(Check_gate_type1(1,1,1,0,1) == 4)
+ cf0:	01 e0       	ldi	r16, 0x01	; 1
+ cf2:	20 e0       	ldi	r18, 0x00	; 0
+ cf4:	41 e0       	ldi	r20, 0x01	; 1
+ cf6:	61 e0       	ldi	r22, 0x01	; 1
+ cf8:	81 e0       	ldi	r24, 0x01	; 1
+ cfa:	c6 dc       	rcall	.-1652   	; 0x688 <Check_gate_type1>
+ cfc:	84 30       	cpi	r24, 0x04	; 4
+ cfe:	a1 f4       	brne	.+40     	; 0xd28 <findIC+0xe4>
+	{
+		lcd_string("IC 7400 NAND");
+ d00:	89 e0       	ldi	r24, 0x09	; 9
+ d02:	91 e0       	ldi	r25, 0x01	; 1
+ d04:	b3 da       	rcall	.-2714   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ d06:	62 e0       	ldi	r22, 0x02	; 2
+ d08:	82 e0       	ldi	r24, 0x02	; 2
+ d0a:	be da       	rcall	.-2692   	; 0x288 <lcd_cursor>
+		lcd_string("Two I/p NAND");
+ d0c:	8f e5       	ldi	r24, 0x5F	; 95
+ d0e:	91 e0       	ldi	r25, 0x01	; 1
+ d10:	ad da       	rcall	.-2726   	; 0x26c <lcd_string>
+ d12:	2f e3       	ldi	r18, 0x3F	; 63
+ d14:	82 e4       	ldi	r24, 0x42	; 66
+ d16:	9f e0       	ldi	r25, 0x0F	; 15
+ d18:	21 50       	subi	r18, 0x01	; 1
+ d1a:	80 40       	sbci	r24, 0x00	; 0
+ d1c:	90 40       	sbci	r25, 0x00	; 0
+ d1e:	e1 f7       	brne	.-8      	; 0xd18 <findIC+0xd4>
+ d20:	00 c0       	rjmp	.+0      	; 0xd22 <findIC+0xde>
+ d22:	00 00       	nop
+		_delay_ms(5000);
+		result1();
+ d24:	81 df       	rcall	.-254    	; 0xc28 <result1>
+ d26:	1c c0       	rjmp	.+56     	; 0xd60 <findIC+0x11c>
+	}
+	else 
+	{
+		Init_Type2();
+ d28:	3d db       	rcall	.-2438   	; 0x3a4 <Init_Type2>
+ d2a:	83 ed       	ldi	r24, 0xD3	; 211
+ d2c:	90 e3       	ldi	r25, 0x30	; 48
+ d2e:	01 97       	sbiw	r24, 0x01	; 1
+ d30:	f1 f7       	brne	.-4      	; 0xd2e <findIC+0xea>
+ d32:	00 c0       	rjmp	.+0      	; 0xd34 <findIC+0xf0>
+ d34:	00 00       	nop
+		_delay_ms(50);
+		if(Check_gate_type2(1,0,0,0,1) == 4)
+ d36:	01 e0       	ldi	r16, 0x01	; 1
+ d38:	20 e0       	ldi	r18, 0x00	; 0
+ d3a:	40 e0       	ldi	r20, 0x00	; 0
+ d3c:	60 e0       	ldi	r22, 0x00	; 0
+ d3e:	81 e0       	ldi	r24, 0x01	; 1
+ d40:	fb dc       	rcall	.-1546   	; 0x738 <Check_gate_type2>
+ d42:	84 30       	cpi	r24, 0x04	; 4
+ d44:	51 f4       	brne	.+20     	; 0xd5a <findIC+0x116>
+		{
+		lcd_string("IC 7402 NOR");
+ d46:	86 e1       	ldi	r24, 0x16	; 22
+ d48:	91 e0       	ldi	r25, 0x01	; 1
+ d4a:	90 da       	rcall	.-2784   	; 0x26c <lcd_string>
+		lcd_cursor(2,2);
+ d4c:	62 e0       	ldi	r22, 0x02	; 2
+ d4e:	82 e0       	ldi	r24, 0x02	; 2
+ d50:	9b da       	rcall	.-2762   	; 0x288 <lcd_cursor>
+		lcd_string("Two I/p NOR");
+ d52:	8c e6       	ldi	r24, 0x6C	; 108
+ d54:	91 e0       	ldi	r25, 0x01	; 1
+ d56:	8a da       	rcall	.-2796   	; 0x26c <lcd_string>
+ d58:	03 c0       	rjmp	.+6      	; 0xd60 <findIC+0x11c>
+		}
+		else
+		{
+			lcd_string("IC 7404 NOT");
+ d5a:	82 eb       	ldi	r24, 0xB2	; 178
+ d5c:	90 e0       	ldi	r25, 0x00	; 0
+ d5e:	86 da       	rcall	.-2804   	; 0x26c <lcd_string>
+		}
+	}
+	
+	
+}
+ d60:	0f 91       	pop	r16
+ d62:	08 95       	ret
+
+00000d64 <__vector_2>:
+		case 6:lcd_string("Find IC");break;
+		
+	}
+}
+ISR(INT1_vect)
+{
+ d64:	1f 92       	push	r1
+ d66:	0f 92       	push	r0
+ d68:	0f b6       	in	r0, 0x3f	; 63
+ d6a:	0f 92       	push	r0
+ d6c:	11 24       	eor	r1, r1
+ d6e:	2f 93       	push	r18
+ d70:	3f 93       	push	r19
+ d72:	4f 93       	push	r20
+ d74:	5f 93       	push	r21
+ d76:	6f 93       	push	r22
+ d78:	7f 93       	push	r23
+ d7a:	8f 93       	push	r24
+ d7c:	9f 93       	push	r25
+ d7e:	af 93       	push	r26
+ d80:	bf 93       	push	r27
+ d82:	ef 93       	push	r30
+ d84:	ff 93       	push	r31
+	lcd_clear();
+ d86:	6c da       	rcall	.-2856   	; 0x260 <lcd_clear>
+	lcd_cursor(1,2);
+ d88:	62 e0       	ldi	r22, 0x02	; 2
+ d8a:	81 e0       	ldi	r24, 0x01	; 1
+ d8c:	7d da       	rcall	.-2822   	; 0x288 <lcd_cursor>
+	switch(mode%TOTAL_MODES)
+ d8e:	80 91 60 00 	lds	r24, 0x0060
+ d92:	95 e2       	ldi	r25, 0x25	; 37
+ d94:	89 9f       	mul	r24, r25
+ d96:	21 2d       	mov	r18, r1
+ d98:	11 24       	eor	r1, r1
+ d9a:	98 2f       	mov	r25, r24
+ d9c:	92 1b       	sub	r25, r18
+ d9e:	96 95       	lsr	r25
+ da0:	92 0f       	add	r25, r18
+ da2:	96 95       	lsr	r25
+ da4:	96 95       	lsr	r25
+ da6:	29 2f       	mov	r18, r25
+ da8:	22 0f       	add	r18, r18
+ daa:	22 0f       	add	r18, r18
+ dac:	22 0f       	add	r18, r18
+ dae:	29 1b       	sub	r18, r25
+ db0:	e8 2f       	mov	r30, r24
+ db2:	e2 1b       	sub	r30, r18
+ db4:	8e 2f       	mov	r24, r30
+ db6:	90 e0       	ldi	r25, 0x00	; 0
+ db8:	87 30       	cpi	r24, 0x07	; 7
+ dba:	91 05       	cpc	r25, r1
+ dbc:	88 f4       	brcc	.+34     	; 0xde0 <__vector_2+0x7c>
+ dbe:	fc 01       	movw	r30, r24
+ dc0:	e6 5e       	subi	r30, 0xE6	; 230
+ dc2:	ff 4f       	sbci	r31, 0xFF	; 255
+ dc4:	09 94       	ijmp
+	{
+		case 0: IC_7400();break;
+ dc6:	b8 de       	rcall	.-656    	; 0xb38 <IC_7400>
+ dc8:	0b c0       	rjmp	.+22     	; 0xde0 <__vector_2+0x7c>
+		case 1: IC_7402();break;
+ dca:	f2 de       	rcall	.-540    	; 0xbb0 <IC_7402>
+ dcc:	09 c0       	rjmp	.+18     	; 0xde0 <__vector_2+0x7c>
+		case 2: IC_7404();break;
+ dce:	3e dd       	rcall	.-1412   	; 0x84c <IC_7404>
+ dd0:	07 c0       	rjmp	.+14     	; 0xde0 <__vector_2+0x7c>
+		case 3: IC_7408();break;
+ dd2:	fe dd       	rcall	.-1028   	; 0x9d0 <IC_7408>
+ dd4:	05 c0       	rjmp	.+10     	; 0xde0 <__vector_2+0x7c>
+		case 4: IC_7432();break;
+ dd6:	38 de       	rcall	.-912    	; 0xa48 <IC_7432>
+ dd8:	03 c0       	rjmp	.+6      	; 0xde0 <__vector_2+0x7c>
+		case 5: IC_7486();break;
+ dda:	72 de       	rcall	.-796    	; 0xac0 <IC_7486>
+ ddc:	01 c0       	rjmp	.+2      	; 0xde0 <__vector_2+0x7c>
+		case 6: findIC();break;
+ dde:	32 df       	rcall	.-412    	; 0xc44 <findIC>
+	}
+	
+}
+ de0:	ff 91       	pop	r31
+ de2:	ef 91       	pop	r30
+ de4:	bf 91       	pop	r27
+ de6:	af 91       	pop	r26
+ de8:	9f 91       	pop	r25
+ dea:	8f 91       	pop	r24
+ dec:	7f 91       	pop	r23
+ dee:	6f 91       	pop	r22
+ df0:	5f 91       	pop	r21
+ df2:	4f 91       	pop	r20
+ df4:	3f 91       	pop	r19
+ df6:	2f 91       	pop	r18
+ df8:	0f 90       	pop	r0
+ dfa:	0f be       	out	0x3f, r0	; 63
+ dfc:	0f 90       	pop	r0
+ dfe:	1f 90       	pop	r1
+ e00:	18 95       	reti
+
+00000e02 <main>:
+	
+}
+
+int main(void)
+{
+	GICR |= (1<<INT0)|(1<<INT1);
+ e02:	8b b7       	in	r24, 0x3b	; 59
+ e04:	80 6c       	ori	r24, 0xC0	; 192
+ e06:	8b bf       	out	0x3b, r24	; 59
+	MCUCR |= (0<<ISC01) | (1<<ISC00) | (0<<ISC11) | (1<<ISC10);
+ e08:	85 b7       	in	r24, 0x35	; 53
+ e0a:	85 60       	ori	r24, 0x05	; 5
+ e0c:	85 bf       	out	0x35, r24	; 53
+	sei();
+ e0e:	78 94       	sei
+	lcd_init();
+ e10:	c8 d9       	rcall	.-3184   	; 0x1a2 <lcd_init>
+	lcd_home();
+ e12:	29 da       	rcall	.-2990   	; 0x266 <lcd_home>
+	lcd_string("  Digital");
+ e14:	88 e7       	ldi	r24, 0x78	; 120
+ e16:	91 e0       	ldi	r25, 0x01	; 1
+ e18:	29 da       	rcall	.-2990   	; 0x26c <lcd_string>
+	lcd_cursor(2,2);
+ e1a:	62 e0       	ldi	r22, 0x02	; 2
+ e1c:	82 e0       	ldi	r24, 0x02	; 2
+ e1e:	34 da       	rcall	.-2968   	; 0x288 <lcd_cursor>
+	lcd_string(" IC Tester");
+ e20:	82 e8       	ldi	r24, 0x82	; 130
+ e22:	91 e0       	ldi	r25, 0x01	; 1
+ e24:	23 da       	rcall	.-3002   	; 0x26c <lcd_string>
+
+	while (1) 
+    {
+		
+    }
+ e26:	ff cf       	rjmp	.-2      	; 0xe26 <main+0x24>
+
+00000e28 <_exit>:
+ e28:	f8 94       	cli
+
+00000e2a <__stop_program>:
+ e2a:	ff cf       	rjmp	.-2      	; 0xe2a <__stop_program>
